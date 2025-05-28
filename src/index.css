@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --color-bg: #FFF8E1;          /* Warm cream */
+  --color-primary: #0077FF;     /* Vibrant blue */
+  --color-accent: #FFC107;      /* Sunny yellow */
+  --color-text: #222222;        /* Dark text */
+  --color-text-secondary: #555555; /* Secondary text */
+  --color-border: #FFE082;      /* Light yellow border */
+  --color-shadow: rgba(255, 193, 7, 0.3); /* Accent shadow */
+  --color-navbar-bg: rgba(255, 248, 225, 0.9); /* Semi-transparent navbar bg */
+}
