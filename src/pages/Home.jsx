@@ -4,6 +4,9 @@ import Button from '../components/Button';
 import { FiMap, FiStar, FiHeart } from 'react-icons/fi';
 import kutchAttractions from '../data/kutchAttractions';
 import greatRannOfKutch from '../assets/KUTCH.jpg';
+import RannOfKutch from '../assets/great-rann-of-kutch.jpg';
+import tempoVehicle from '../assets/vehicles/tempo-12.jpg';
+
 
 const Home = () => {
   const [attractions] = useState(kutchAttractions);
@@ -14,28 +17,25 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="bg-gradient-to-br from-pink-50 to-pink-100 min-h-screen font-sans text-pink-900  pt-28">
+    <main className="bg-gradient-to-br from-orange-100 to-yellow-50 min-h-screen font-sans text-stone-800 pt-28">
       {/* Hero Section */}
-      <section
-        className="max-w-7xl mx-auto px-6 py-32 flex flex-col-reverse md:flex-row items-center gap-12 relative overflow-hidden"
-      >
-        <div className={`flex-1 text-center md:text-left transition-opacity duration-1000 ease-in-out ${animateHero ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10' }`}>
-          <h2 className="text-sm uppercase text-pink-400 tracking-widest mb-3 font-mono drop-shadow-md">
+      <section className="max-w-7xl mx-auto px-6 py-32 flex flex-col-reverse md:flex-row items-center gap-12 relative overflow-hidden">
+        <div className={`flex-1 text-center md:text-left transition-opacity duration-1000 ease-in-out ${animateHero ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+          <h2 className="text-sm uppercase text-amber-600 tracking-widest mb-3 font-mono drop-shadow-sm">
             Welcome to Kutch
           </h2>
-          <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-pink-500 via-pink-600 to-pink-700 bg-clip-text text-transparent mb-6 leading-tight drop-shadow-lg animate-text-flicker">
+          <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 bg-clip-text text-transparent mb-6 leading-tight drop-shadow-sm animate-text-flicker">
             Discover Kutch, Gujarat
           </h1>
-          <p className="text-pink-700 mb-10 text-lg max-w-md mx-auto md:mx-0 tracking-wide">
-            Explore the best of Kutch’s famous attractions and rich culture.
+          <p className="text-orange-700 mb-10 text-lg max-w-md mx-auto md:mx-0 tracking-wide">
+            Explore the best of Kutch’s desert landscapes, cultural richness, and timeless beauty.
           </p>
-          <Button className="bg-pink-500 hover:bg-pink-600 text-white font-bold px-8 py-3 rounded-lg shadow-lg transition-transform duration-300 hover:scale-110 hover:shadow-pink-400/50">
+          <Button className="bg-orange-400 hover:bg-orange-500 text-white font-bold px-8 py-3 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-amber-300/50">
             <Link to="/tours">Explore Attractions</Link>
           </Button>
         </div>
-        <div className="flex-1 relative rounded-3xl shadow-pink-400/50 overflow-hidden max-w-md mx-auto md:mx-0 ring-2 ring-pink-400">
-          {/* Soft glow overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-white/70 pointer-events-none rounded-3xl" />
+        <div className="flex-1 relative rounded-3xl shadow-amber-200 overflow-hidden max-w-md mx-auto md:mx-0 ring-2 ring-amber-300">
+          <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-white/70 pointer-events-none rounded-3xl" />
           <img
             src={greatRannOfKutch}
             alt="Great Rann of Kutch"
@@ -45,77 +45,79 @@ const Home = () => {
       </section>
 
       {/* Attractions Section */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <h2 className="text-4xl font-extrabold bg-gradient-to-r from-pink-500 via-pink-600 to-pink-700 bg-clip-text text-transparent mb-14 text-center tracking-tight drop-shadow-lg animate-text-flicker">
-          Famous Attractions of Kutch
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {attractions.map((place) => (
-            <div
-              key={place.id}
-              className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg overflow-hidden transform transition duration-400 hover:shadow-pink-300 hover:scale-[1.05] border border-pink-300"
-            >
-              <div className="relative">
-                <img
-                  src={place.image}
-                  alt={place.title}
-                  className="w-full h-56 object-cover brightness-95 hover:brightness-110 transition duration-500"
-                />
-                {place.bestTime && (
-                  <span className="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold px-4 py-1 rounded-full shadow-md">
-                    Best: {place.bestTime}
-                  </span>
-                )}
-              </div>
-              <div className="p-6 space-y-3">
-                <h3 className="text-2xl font-extrabold text-pink-600">{place.title}</h3>
-                <p className="text-pink-700 text-sm leading-relaxed">{place.overview}</p>
-                {place.highlights && (
-                  <p className="text-pink-700 text-sm">
-                    <strong className="text-pink-600">Highlights:</strong> {place.highlights}
-                  </p>
-                )}
-                {place.activities && (
-                  <p className="text-pink-700 text-sm">
-                    <strong className="text-pink-600">Activities:</strong> {place.activities}
-                  </p>
-                )}
-                {place.significance && (
-                  <p className="text-pink-700 text-sm">
-                    <strong className="text-pink-600">Significance:</strong> {place.significance}
-                  </p>
-                )}
-                <button className="mt-4 text-pink-600 font-semibold hover:underline hover:text-pink-500 transition-colors">
-                  Read More &rarr;
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+     <section className="max-w-7xl mx-auto px-6 py-20">
+  <h2 className="text-4xl font-extrabold text-center mb-14 text-orange-600">
+    Our Services
+  </h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+    {/* Tour Packages Card */}
+    <Link
+      to="/tours"
+      className="block bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-orange-300 overflow-hidden transform transition duration-400 hover:shadow-orange-300 hover:scale-[1.05]"
+    >
+      <img
+        src={RannOfKutch}
+        alt="Tour Packages"
+        className="w-full h-48 object-cover rounded-t-3xl"
+      />
+      <div className="p-6 space-y-3">
+        <h3 className="text-2xl font-extrabold text-orange-600">Tour Packages</h3>
+        <p className="text-stone-700">
+          Explore curated tours across Kutch’s desert landscapes, cultural sites, and more.
+        </p>
+        <button className="mt-6 bg-orange-400 hover:bg-orange-500 text-white font-bold px-6 py-3 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 w-full">
+          Explore Tours
+        </button>
+      </div>
+    </Link>
+
+    {/* Vehicle Rentals Card */}
+    <Link
+      to="/vehicles"
+      className="block bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-orange-300 overflow-hidden transform transition duration-400 hover:shadow-orange-300 hover:scale-[1.05]"
+    >
+      <img
+        src={tempoVehicle}
+        alt="Vehicle Rentals"
+        className="w-full h-48 object-cover rounded-t-3xl"
+      />
+      <div className="p-6 space-y-3">
+        <h3 className="text-2xl font-extrabold text-orange-600">Vehicle Rentals</h3>
+        <p className="text-stone-700">
+          Rent comfortable and reliable vehicles to explore Kutch at your own pace.
+        </p>
+        <button className="mt-6 bg-orange-400 hover:bg-orange-500 text-white font-bold px-6 py-3 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 w-full">
+          Rent Vehicles
+        </button>
+      </div>
+    </Link>
+
+  </div>
+</section>
 
       {/* Why Choose Us */}
-      <section className="max-w-7xl mx-auto px-6 py-20 bg-pink-50 rounded-3xl border border-pink-300 shadow-md">
-        <h2 className="text-4xl font-extrabold bg-gradient-to-r from-pink-500 via-pink-600 to-pink-700 bg-clip-text text-transparent mb-16 text-center tracking-tight drop-shadow-md animate-text-flicker">
+      <section className="max-w-7xl mx-auto px-6 py-20 bg-orange-100 rounded-3xl border border-amber-300 shadow-md">
+        <h2 className="text-4xl font-extrabold bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-400 bg-clip-text text-transparent mb-16 text-center tracking-tight drop-shadow-md animate-text-flicker">
           Why Choose TravelEase?
         </h2>
-        <div className="flex flex-col md:flex-row justify-around items-center gap-12 text-pink-700">
+        <div className="flex flex-col md:flex-row justify-around items-center gap-12 text-stone-700">
           {[{
-            icon: <FiMap className="text-pink-500 text-7xl mb-6" />,
+            icon: <FiMap className="text-orange-500 text-7xl mb-6" />,
             title: 'Diverse Destinations',
-            desc: 'From mountains to beaches, find tours for every taste.'
-          },{
-            icon: <FiStar className="text-pink-500 text-7xl mb-6" />,
+            desc: 'From deserts to salt plains, find unique experiences.'
+          }, {
+            icon: <FiStar className="text-yellow-500 text-7xl mb-6" />,
             title: 'Top Rated Services',
-            desc: 'Highly rated tours and customer-friendly booking experience.'
-          },{
-            icon: <FiHeart className="text-pink-500 text-7xl mb-6" />,
+            desc: 'Friendly booking, great support, and happy travelers.'
+          }, {
+            icon: <FiHeart className="text-rose-400 text-7xl mb-6" />,
             title: 'Trusted & Loved',
-            desc: 'Thousands of happy travelers and glowing testimonials.'
+            desc: 'Thousands of glowing testimonials from explorers.'
           }].map(({ icon, title, desc }) => (
-            <div key={title} className="flex flex-col items-center max-w-xs text-center space-y-3 p-6 rounded-3xl bg-white shadow-md hover:shadow-pink-300 transition-shadow duration-300">
+            <div key={title} className="flex flex-col items-center max-w-xs text-center space-y-3 p-6 rounded-3xl bg-white/80 shadow-sm hover:shadow-amber-200 transition-shadow duration-300">
               {icon}
-              <h3 className="text-2xl font-extrabold text-pink-600">{title}</h3>
+              <h3 className="text-2xl font-extrabold text-orange-700">{title}</h3>
               <p>{desc}</p>
             </div>
           ))}
@@ -124,9 +126,9 @@ const Home = () => {
 
       {/* Testimonial */}
       <section className="max-w-3xl mx-auto px-6 py-20">
-        <div className="bg-white rounded-3xl shadow-md p-12 text-center italic text-pink-700 relative border border-pink-300">
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-md p-12 text-center italic text-stone-700 relative border border-amber-300">
           <svg
-            className="w-16 h-16 text-pink-400 absolute top-6 left-1/2 -translate-x-1/2"
+            className="w-16 h-16 text-orange-300 absolute top-6 left-1/2 -translate-x-1/2"
             fill="currentColor"
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -134,9 +136,9 @@ const Home = () => {
             <path d="M7.17 6.25C5.95 6.25 5 7.22 5 8.5v4a2.5 2.5 0 005 0v-4c0-1.28-.95-2.25-2.33-2.25zm8 0c-1.22 0-2.17.97-2.17 2.25v4a2.5 2.5 0 005 0v-4c0-1.28-.95-2.25-2.33-2.25z" />
           </svg>
           <p className="text-lg max-w-xl mx-auto mb-6">
-            "TravelEase made booking our vacation so easy and stress-free. Highly recommend!"
+            "TravelEase made booking our desert adventure smooth and unforgettable. Highly recommend!"
           </p>
-          <p className="font-semibold text-pink-600">— Gurukrupa Travels</p>
+          <p className="font-semibold text-amber-700">— Gurukrupa Travels</p>
         </div>
       </section>
 
@@ -147,11 +149,11 @@ const Home = () => {
             opacity: 1;
           }
           20%, 22%, 24%, 55% {
-            opacity: 0.6;
+            opacity: 0.7;
           }
         }
         .animate-text-flicker {
-          animation: flicker 3s infinite;
+          animation: flicker 3.5s infinite;
         }
       `}</style>
     </main>

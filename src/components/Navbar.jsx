@@ -33,18 +33,18 @@ const Navbar = () => {
         transition-all duration-300
         ${
           scrolled
-            ? 'bg-white/90 backdrop-blur-lg shadow-xl border-b border-pink-200'
-            : 'bg-pink-100/90 backdrop-blur-lg shadow-md border-b border-pink-300'
+            ? 'bg-yellow-50/90 backdrop-blur-lg shadow-xl border-b border-orange-200'
+            : 'bg-orange-100/90 backdrop-blur-lg shadow-md border-b border-yellow-300'
         }`}
     >
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold text-pink-600 tracking-tight">
+        <Link to="/" className="text-2xl font-bold text-orange-600 tracking-tight">
           Gurukrupa.Travels
         </Link>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-6 font-semibold text-pink-700">
+        <ul className="hidden md:flex space-x-6 font-semibold text-orange-700">
           {navLinks.map(({ name, path }) => {
             const isActive = location.pathname === path;
             return (
@@ -52,12 +52,12 @@ const Navbar = () => {
                 <Link
                   to={path}
                   className={`relative px-2 py-1 transition-all duration-300 ${
-                    isActive ? 'text-pink-600 font-bold' : 'hover:text-pink-500'
+                    isActive ? 'text-orange-600 font-bold' : 'hover:text-orange-500'
                   }`}
                 >
                   {name}
                   <span
-                    className={`absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-pink-400 to-pink-600 rounded-full
+                    className={`absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-yellow-400 to-orange-600 rounded-full
                     transition-transform duration-300
                     ${isActive ? 'scale-x-100' : 'scale-x-0'}
                     hover:scale-x-100 origin-left`}
@@ -71,7 +71,7 @@ const Navbar = () => {
         {/* Mobile Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-3xl text-pink-600"
+          className="md:hidden text-3xl text-orange-600"
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isOpen}
         >
@@ -81,17 +81,17 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden mt-2 bg-pink-50/90 rounded-xl px-6 py-4 border-t border-pink-200 shadow-md transition-all ${
+        className={`md:hidden mt-2 bg-yellow-50/90 rounded-xl px-6 py-4 border-t border-orange-200 shadow-md transition-all ${
           isOpen ? 'block' : 'hidden'
         }`}
       >
-        <ul className="flex flex-col space-y-4 text-pink-800 font-semibold">
+        <ul className="flex flex-col space-y-4 text-orange-800 font-semibold">
           {navLinks.map(({ name, path }) => (
             <li key={name}>
               <Link
                 to={path}
                 className={`block transition-colors duration-300 ${
-                  location.pathname === path ? 'text-pink-600 font-bold' : 'hover:text-pink-500'
+                  location.pathname === path ? 'text-orange-600 font-bold' : 'hover:text-orange-500'
                 }`}
                 onClick={() => setIsOpen(false)}
               >

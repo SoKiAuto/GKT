@@ -12,7 +12,12 @@ module.exports = {
         'text-secondary': 'var(--color-text-secondary)',
         border: 'var(--color-border)',
         navbar: 'var(--color-navbar-bg)',
+        
       },
+       transitionDuration: {
+        400: '400ms', // add custom duration
+      },
+      
       boxShadow: {
         accent: '0 0 10px var(--color-shadow)',
       },},

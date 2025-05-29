@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const VehicleCard = ({ vehicle }) => {
+  const [expanded, setExpanded] = useState(false);
+
   const whatsappNumber = "919879714494";
 
   const whatsappMessage = encodeURIComponent(
@@ -16,7 +18,15 @@ const VehicleCard = ({ vehicle }) => {
   const mailtoUrl = `mailto:${emailAddress}?subject=${emailSubject}&body=${emailBody}`;
 
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg overflow-hidden border border-pink-300 transform transition duration-400 hover:shadow-pink-300 hover:scale-[1.05]">
+    <div
+      onClick={() => setExpanded(!expanded)}
+      className={`bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg overflow-hidden border border-orange-300 transform transition duration-300 cursor-pointer
+        hover:shadow-orange-300
+        min-w-[300px] max-w-md
+        ${expanded ? 'scale-105' : 'hover:scale-105'}
+      `}
+      style={{ willChange: 'transform' }}
+    >
       {vehicle.image && (
         <img
           src={vehicle.image}
@@ -25,20 +35,26 @@ const VehicleCard = ({ vehicle }) => {
         />
       )}
       <div className="p-6 space-y-3">
-        <h3 className="text-2xl font-extrabold text-pink-600">{vehicle.type}</h3>
+        <h3 className="text-2xl font-extrabold text-orange-600">{vehicle.type}</h3>
         <p><strong>Category:</strong> {vehicle.category}</p>
         <p><strong>Capacity:</strong> {vehicle.capacity}</p>
-        {vehicle.privateRate && (
-          <p><strong>Private (Self-Drive) Rate*:</strong> {vehicle.privateRate}</p>
-        )}
-        {vehicle.driverRate && (
-          <p><strong>With Driver Rate* (Per Day):</strong> {vehicle.driverRate}</p>
-        )}
-        {vehicle.rate && (
-          <p><strong>Rate (Per Day):</strong> {vehicle.rate}</p>
-        )}
-        {vehicle.notes && (
-          <p><strong>Notes:</strong> {vehicle.notes}</p>
+
+        {/* Show rates and notes only if expanded */}
+        {expanded && (
+          <>
+            {vehicle.privateRate && (
+              <p><strong>Private (Self-Drive) Rate*:</strong> {vehicle.privateRate}</p>
+            )}
+            {vehicle.driverRate && (
+              <p><strong>With Driver Rate* (Per Day):</strong> {vehicle.driverRate}</p>
+            )}
+            {vehicle.rate && (
+              <p><strong>Rate (Per Day):</strong> {vehicle.rate}</p>
+            )}
+            {vehicle.notes && (
+              <p><strong>Notes:</strong> {vehicle.notes}</p>
+            )}
+          </>
         )}
 
         <div className="mt-6 flex space-x-4">
@@ -46,6 +62,7 @@ const VehicleCard = ({ vehicle }) => {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={e => e.stopPropagation()} // prevent card toggle when clicking link
             className="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white font-bold px-5 py-2 rounded-lg transition-transform duration-300 hover:scale-105 shadow-green-300/50 shadow"
           >
             {/* WhatsApp Icon */}
@@ -70,7 +87,8 @@ const VehicleCard = ({ vehicle }) => {
             href={mailtoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 bg-pink-500 hover:bg-pink-600 text-white font-bold px-5 py-2 rounded-lg transition-transform duration-300 hover:scale-105 shadow-pink-300/50 shadow"
+            onClick={e => e.stopPropagation()}
+            className="flex items-center space-x-2 bg-gradient-to-r from-yellow-600 to-orange-700 hover:from-yellow-700 hover:to-orange-800 text-white font-bold px-5 py-2 rounded-lg transition-transform duration-300 hover:scale-105 shadow-orange-300/50 shadow"
           >
             {/* Email Icon */}
             <svg

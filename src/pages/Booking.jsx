@@ -69,9 +69,9 @@ const Booking = () => {
       : vehicles.map((v) => ({ id: v.id, label: v.type }));
 
   return (
-    <main className="pt-32 pb-20 bg-gradient-to-br from-pink-50 to-pink-100 min-h-screen text-pink-900 flex justify-center items-start">
-      <section className="max-w-xl w-full bg-white rounded-3xl p-10 shadow-lg">
-        <h1 className="text-4xl font-extrabold mb-12 text-center text-pink-700">
+    <main className="pt-32 pb-20 bg-gradient-to-br from-yellow-50 to-orange-100 min-h-screen text-orange-900 flex justify-center items-start">
+      <section className="max-w-xl w-full bg-white rounded-3xl p-10 shadow-lg shadow-yellow-200/50">
+        <h1 className="text-4xl font-extrabold mb-12 text-center text-orange-700">
           Book Your Tour or Vehicle
         </h1>
 
@@ -83,8 +83,8 @@ const Booking = () => {
             { id: 'phone', label: 'Phone Number', type: 'tel', required: true },
           ].map(({ id, label, type, required }) => (
             <div key={id}>
-              <label htmlFor={id} className="block mb-2 font-semibold text-pink-700">
-                {label} {required && <span className="text-pink-500">*</span>}
+              <label htmlFor={id} className="block mb-2 font-semibold text-orange-700">
+                {label} {required && <span className="text-orange-500">*</span>}
               </label>
               <input
                 type={type}
@@ -94,22 +94,22 @@ const Booking = () => {
                 onChange={handleChange}
                 required={required}
                 placeholder={`Enter your ${label.toLowerCase()}`}
-                className="w-full rounded-lg border border-pink-300 px-4 py-3 placeholder-pink-300 text-pink-900 font-medium focus:outline-none focus:ring-4 focus:ring-pink-300 focus:border-pink-500 transition"
+                className="w-full rounded-lg border border-orange-300 px-4 py-3 placeholder-orange-300 text-orange-900 font-medium focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
               />
             </div>
           ))}
 
           {/* Package Type */}
           <div>
-            <label htmlFor="packageType" className="block mb-2 font-semibold text-pink-700">
-              Package Type <span className="text-pink-500">*</span>
+            <label htmlFor="packageType" className="block mb-2 font-semibold text-orange-700">
+              Package Type <span className="text-orange-500">*</span>
             </label>
             <select
               id="packageType"
               name="packageType"
               value={form.packageType}
               onChange={handleChange}
-              className="w-full rounded-lg border border-pink-300 px-4 py-3 text-pink-900 font-medium focus:outline-none focus:ring-4 focus:ring-pink-300 focus:border-pink-500 transition"
+              className="w-full rounded-lg border border-orange-300 px-4 py-3 text-orange-900 font-medium focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
             >
               <option value="tour">Tour Package</option>
               <option value="vehicle">Vehicle Rental</option>
@@ -118,8 +118,8 @@ const Booking = () => {
 
           {/* Specific Package */}
           <div>
-            <label htmlFor="packageId" className="block mb-2 font-semibold text-pink-700">
-              Select Package <span className="text-pink-500">*</span>
+            <label htmlFor="packageId" className="block mb-2 font-semibold text-orange-700">
+              Select Package <span className="text-orange-500">*</span>
             </label>
             <select
               id="packageId"
@@ -127,7 +127,7 @@ const Booking = () => {
               value={form.packageId}
               onChange={handleChange}
               required
-              className="w-full rounded-lg border border-pink-300 px-4 py-3 text-pink-900 font-medium focus:outline-none focus:ring-4 focus:ring-pink-300 focus:border-pink-500 transition"
+              className="w-full rounded-lg border border-orange-300 px-4 py-3 text-orange-900 font-medium focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
             >
               <option value="">-- Choose a package --</option>
               {packageOptions.map((opt) => (
@@ -140,7 +140,7 @@ const Booking = () => {
 
           {/* Additional Message */}
           <div>
-            <label htmlFor="message" className="block mb-2 font-semibold text-pink-700">
+            <label htmlFor="message" className="block mb-2 font-semibold text-orange-700">
               Additional Message (optional)
             </label>
             <textarea
@@ -150,13 +150,13 @@ const Booking = () => {
               value={form.message}
               onChange={handleChange}
               placeholder="Write any special requests or questions..."
-              className="w-full rounded-lg border border-pink-300 px-4 py-3 placeholder-pink-300 text-pink-900 font-medium resize-none focus:outline-none focus:ring-4 focus:ring-pink-300 focus:border-pink-500 transition"
+              className="w-full rounded-lg border border-orange-300 px-4 py-3 placeholder-orange-300 text-orange-900 font-medium resize-none focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-pink-500 to-pink-700 hover:from-pink-600 hover:to-pink-800 text-white font-extrabold py-4 rounded-xl shadow-lg transition"
+            className="w-full bg-gradient-to-r from-yellow-600 to-orange-700 hover:from-yellow-700 hover:to-orange-800 text-white font-extrabold py-4 rounded-xl shadow-lg transition"
           >
             Submit Booking Inquiry
           </button>
