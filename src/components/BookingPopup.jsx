@@ -32,7 +32,7 @@ const BookingPopup = ({ onClose }) => {
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fadeIn"
       style={{ animationDuration: '300ms' }}
     >
-      <div className="bg-white rounded-3xl p-10 max-w-md w-full shadow-lg shadow-yellow-200/50 relative">
+      <div className="bg-white rounded-3xl p-6 max-w-sm w-full shadow-lg shadow-yellow-200/50 relative">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-orange-600 hover:text-orange-800 text-2xl font-bold"
@@ -42,11 +42,11 @@ const BookingPopup = ({ onClose }) => {
           &times;
         </button>
 
-        <h2 className="text-3xl font-extrabold mb-8 text-center text-orange-700">
+        <h2 className="text-2xl font-extrabold mb-8 text-center text-orange-700">
           Booking Inquiry
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-8">
+        <form onSubmit={handleSubmit} className="space-y-6">
           {/* Name */}
           <div>
             <label htmlFor="name" className="block mb-2 font-semibold text-orange-700">
@@ -60,7 +60,7 @@ const BookingPopup = ({ onClose }) => {
               onChange={handleChange}
               required
               placeholder="Enter your full name"
-              className="w-full rounded-lg border border-orange-300 px-4 py-3 placeholder-orange-300 text-orange-900 font-medium focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
+              className="w-full rounded-lg border border-orange-300 px-3 py-2 placeholder-orange-300 text-orange-900 font-medium focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
             />
           </div>
 
@@ -77,7 +77,7 @@ const BookingPopup = ({ onClose }) => {
               onChange={handleChange}
               required
               placeholder="Enter your email address"
-              className="w-full rounded-lg border border-orange-300 px-4 py-3 placeholder-orange-300 text-orange-900 font-medium focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
+              className="w-full rounded-lg border border-orange-300 px-3 py-2 placeholder-orange-300 text-orange-900 font-medium focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
             />
           </div>
 
@@ -94,7 +94,7 @@ const BookingPopup = ({ onClose }) => {
               onChange={handleChange}
               required
               placeholder="Enter your phone number"
-              className="w-full rounded-lg border border-orange-300 px-4 py-3 placeholder-orange-300 text-orange-900 font-medium focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
+              className="w-full rounded-lg border border-orange-300 px-3 py-2 placeholder-orange-300 text-orange-900 font-medium focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
             />
           </div>
 
@@ -106,17 +106,17 @@ const BookingPopup = ({ onClose }) => {
             <textarea
               id="message"
               name="message"
-              rows="4"
+              rows="3"
               value={form.message}
               onChange={handleChange}
               placeholder="Write any special requests or questions..."
-              className="w-full rounded-lg border border-orange-300 px-4 py-3 placeholder-orange-300 text-orange-900 font-medium resize-none focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
+              className="w-full rounded-lg border border-orange-300 px-3 py-2 placeholder-orange-300 text-orange-900 font-medium resize-none focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-yellow-600 to-orange-700 hover:from-yellow-700 hover:to-orange-800 text-white font-extrabold py-4 rounded-xl shadow-lg transition"
+            className="w-full bg-gradient-to-r from-yellow-600 to-orange-700 hover:from-yellow-700 hover:to-orange-800 text-white font-extrabold py-3 rounded-xl shadow-lg transition"
           >
             Submit Inquiry
           </button>
