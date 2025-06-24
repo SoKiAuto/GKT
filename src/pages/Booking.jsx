@@ -69,9 +69,9 @@ const Booking = () => {
       : vehicles.map((v) => ({ id: v.id, label: v.type }));
 
   return (
-    <main className="pt-32 pb-20 bg-gradient-to-br from-yellow-50 to-orange-100 min-h-screen text-orange-900 flex justify-center items-start">
-      <section className="max-w-xl w-full bg-white rounded-3xl p-10 shadow-lg shadow-yellow-200/50">
-        <h1 className="text-4xl font-extrabold mb-12 text-center text-orange-700">
+    <main className="min-h-screen bg-neutral-950 dark:bg-white flex justify-center items-start pt-24 pb-16 px-4 sm:px-6 md:px-10 lg:px-20 text-gray-200 dark:text-gray-900 transition-colors duration-500 ease-in-out">
+      <section className="max-w-xl w-full bg-neutral-800 dark:bg-neutral-100 rounded-3xl p-10 shadow-lg shadow-black/50 dark:shadow-yellow-300/40">
+        <h1 className="text-4xl font-extrabold mb-12 text-center text-amber-400 dark:text-amber-600 drop-shadow-md">
           Book Your Tour or Vehicle
         </h1>
 
@@ -83,8 +83,8 @@ const Booking = () => {
             { id: 'phone', label: 'Phone Number', type: 'tel', required: true },
           ].map(({ id, label, type, required }) => (
             <div key={id}>
-              <label htmlFor={id} className="block mb-2 font-semibold text-orange-700">
-                {label} {required && <span className="text-orange-500">*</span>}
+              <label htmlFor={id} className="block mb-2 font-semibold text-amber-400 dark:text-amber-600">
+                {label} {required && <span className="text-amber-500">*</span>}
               </label>
               <input
                 type={type}
@@ -94,53 +94,63 @@ const Booking = () => {
                 onChange={handleChange}
                 required={required}
                 placeholder={`Enter your ${label.toLowerCase()}`}
-                className="w-full rounded-lg border border-orange-300 px-4 py-3 placeholder-orange-300 text-orange-900 font-medium focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
+                className="w-full rounded-lg border border-amber-600 dark:border-amber-400 px-4 py-3 placeholder-amber-600 dark:placeholder-amber-400 text-gray-100 dark:text-gray-900 font-medium focus:outline-none focus:ring-4 focus:ring-amber-500 focus:border-amber-500 transition"
               />
             </div>
           ))}
 
-          {/* Package Type */}
-          <div>
-            <label htmlFor="packageType" className="block mb-2 font-semibold text-orange-700">
-              Package Type <span className="text-orange-500">*</span>
-            </label>
-            <select
-              id="packageType"
-              name="packageType"
-              value={form.packageType}
-              onChange={handleChange}
-              className="w-full rounded-lg border border-orange-300 px-4 py-3 text-orange-900 font-medium focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
-            >
-              <option value="tour">Tour Package</option>
-              <option value="vehicle">Vehicle Rental</option>
-            </select>
-          </div>
+      {/* Package Type */}
+<div>
+  <label htmlFor="packageType" className="block mb-2 font-semibold text-amber-400 dark:text-amber-600">
+    Package Type <span className="text-amber-500">*</span>
+  </label>
+  <select
+    id="packageType"
+    name="packageType"
+    value={form.packageType}
+    onChange={handleChange}
+    className="w-full rounded-lg border border-amber-600 dark:border-amber-400 px-4 py-3 
+               bg-neutral-900 dark:bg-white 
+               text-gray-100 dark:text-gray-900 
+               placeholder-amber-600 dark:placeholder-amber-400 
+               font-medium focus:outline-none focus:ring-4 focus:ring-amber-500 
+               focus:border-amber-500 transition"
+  >
+    <option value="tour">Tour Package</option>
+    <option value="vehicle">Vehicle Rental</option>
+  </select>
+</div>
 
-          {/* Specific Package */}
-          <div>
-            <label htmlFor="packageId" className="block mb-2 font-semibold text-orange-700">
-              Select Package <span className="text-orange-500">*</span>
-            </label>
-            <select
-              id="packageId"
-              name="packageId"
-              value={form.packageId}
-              onChange={handleChange}
-              required
-              className="w-full rounded-lg border border-orange-300 px-4 py-3 text-orange-900 font-medium focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
-            >
-              <option value="">-- Choose a package --</option>
-              {packageOptions.map((opt) => (
-                <option key={opt.id} value={opt.id}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
-          </div>
+{/* Specific Package */}
+<div>
+  <label htmlFor="packageId" className="block mb-2 font-semibold text-amber-400 dark:text-amber-600">
+    Select Package <span className="text-amber-500">*</span>
+  </label>
+  <select
+    id="packageId"
+    name="packageId"
+    value={form.packageId}
+    onChange={handleChange}
+    required
+    className="w-full rounded-lg border border-amber-600 dark:border-amber-400 px-4 py-3 
+               bg-neutral-900 dark:bg-white 
+               text-gray-100 dark:text-gray-900 
+               placeholder-amber-600 dark:placeholder-amber-400 
+               font-medium focus:outline-none focus:ring-4 focus:ring-amber-500 
+               focus:border-amber-500 transition"
+  >
+    <option value="">-- Choose a package --</option>
+    {packageOptions.map((opt) => (
+      <option key={opt.id} value={opt.id}>
+        {opt.label}
+      </option>
+    ))}
+  </select>
+</div>
 
           {/* Additional Message */}
           <div>
-            <label htmlFor="message" className="block mb-2 font-semibold text-orange-700">
+            <label htmlFor="message" className="block mb-2 font-semibold text-amber-400 dark:text-amber-600">
               Additional Message (optional)
             </label>
             <textarea
@@ -150,13 +160,13 @@ const Booking = () => {
               value={form.message}
               onChange={handleChange}
               placeholder="Write any special requests or questions..."
-              className="w-full rounded-lg border border-orange-300 px-4 py-3 placeholder-orange-300 text-orange-900 font-medium resize-none focus:outline-none focus:ring-4 focus:ring-orange-300 focus:border-orange-500 transition"
+              className="w-full rounded-lg border border-amber-600 dark:border-amber-400 px-4 py-3 placeholder-amber-600 dark:placeholder-amber-400 text-gray-100 dark:text-gray-900 font-medium resize-none focus:outline-none focus:ring-4 focus:ring-amber-500 focus:border-amber-500 transition"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-yellow-600 to-orange-700 hover:from-yellow-700 hover:to-orange-800 text-white font-extrabold py-4 rounded-xl shadow-lg transition"
+            className="w-full bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-gray-900 font-extrabold py-4 rounded-xl shadow-lg transition"
           >
             Submit Booking Inquiry
           </button>
