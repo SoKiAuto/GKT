@@ -1,6 +1,6 @@
 import classicKutch from '../assets/tours/classic-kutch.jpg';
 import rannUtsav from '../assets/tours/rann-utsav.jpg';
-//import spiritualTour from '../assets/tours/spiritual-tour.jpg';
+import spiritualTour from '../assets/tours/spiritual-tour.jpg';
 import heritageCoast from '../assets/tours/heritage-coast.jpg';
 //import natureTour from '../assets/tours/nature-tour.jpg';
 //import craftCulture from '../assets/tours/craft-culture.jpg';
@@ -32,7 +32,7 @@ const updatedToursData = [
     ],
     cost: "₹6,500–₹11,000 per person",
     includes: "Stay, meals, sightseeing, cultural program",
-    image: rannUtsav,
+    image: spiritualTour,
   },
   {
     id: 3,

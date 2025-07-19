@@ -35,6 +35,7 @@ const BackgroundTiles = () => {
           backgroundImage: `url(${bg})`,
           transform: `translate3d(${translateX}px, ${translateY}px, 0) rotateZ(${rotateZ}deg)`,
           transition: 'none',
+          opacity: 0.6,
         }}
       ></div>
     );

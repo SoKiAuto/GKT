@@ -24,7 +24,7 @@ const App = () => {
   };
 
   return (
-    <div className={`min-h-fu font-sans transition-all duration-300 ${theme}`}>
+    <div className={`min-h-full font-sans transition-all duration-300 ${theme}`}>
       
       {/* ✅ Add the background tiles here */}
       <BackgroundTiles />

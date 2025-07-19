@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
+import '@fontsource/playfair-display';
+import '@fontsource/great-vibes';
 
-import img1 from '../../assets/Photos/1.jpg';
+
+import img1 from '../../assets/Photos/7.jpg';
 import img2 from '../../assets/Photos/2.jpg';
 import img3 from '../../assets/Photos/3.jpg';
 import img4 from '../../assets/Photos/4.jpg';
 import img5 from '../../assets/Photos/5.jpg';
 import img6 from '../../assets/Photos/6.jpg';
-import img7 from '../../assets/Photos/7.jpg';
+import img7 from '../../assets/Photos/1.jpg';
 import img8 from '../../assets/Photos/8.jpg';
 import img9 from '../../assets/Photos/9.jpg';
 import img10 from '../../assets/Photos/10.jpg';
@@ -14,19 +17,20 @@ import img11 from '../../assets/Photos/11.jpg';
 import img12 from '../../assets/Photos/12.jpg';
 
 const images = [
-  { src: img1, title: 'Futuristic Slide 1', desc: 'Welcome to the future.' },
-  { src: img2, title: 'Futuristic Slide 2', desc: 'Experience the next level.' },
-  { src: img3, title: 'Futuristic Slide 3', desc: 'Powered by innovation.' },
-  { src: img4, title: 'Futuristic Slide 4', desc: 'Bold and sleek design.' },
-  { src: img5, title: 'Futuristic Slide 5', desc: 'Your digital journey starts here.' },
-  { src: img6, title: 'Futuristic Slide 6', desc: 'Explore new dimensions.' },
-  { src: img7, title: 'Futuristic Slide 7', desc: 'Imagination meets reality.' },
-  { src: img8, title: 'Futuristic Slide 8', desc: 'Elevate your senses.' },
-  { src: img9, title: 'Futuristic Slide 9', desc: 'Tech meets art.' },
-  { src: img10, title: 'Futuristic Slide 10', desc: 'Driven by creativity.' },
-  { src: img11, title: 'Futuristic Slide 11', desc: 'Discover the unknown.' },
-  { src: img12, title: 'Futuristic Slide 12', desc: 'Join the revolution.' },
+  { src: img1, title: 'Welcome to the Kutch', desc: 'Where the white desert meets tradition.' },
+  { src: img2, title: 'Colors of Kutch', desc: 'A land woven with culture and craft.' },
+  { src: img3, title: 'Heritage in Every Grain', desc: 'Timeless stories told by the sand.' },
+  { src: img4, title: 'Echoes of Tradition', desc: 'Experience culture beyond imagination.' },
+  { src: img5, title: 'Mystic Kutch', desc: 'Where history dances on the salt plains.' },
+  { src: img6, title: 'Desert Symphony', desc: 'Nature’s canvas in every direction.' },
+  { src: img7, title: 'Art of the Land', desc: 'Handcrafted wonders await your eyes.' },
+  { src: img8, title: 'Winds of Kutch', desc: 'Feel the spirit of Gujarat’s pride.' },
+  { src: img9, title: 'Kutch Calling', desc: 'Explore the rhythm of tradition and travel.' },
+  { src: img10, title: 'Beyond the Horizon', desc: 'Every sunset tells a different tale.' },
+  { src: img11, title: 'Salt & Soul', desc: 'Witness the grandeur of the Rann.' },
+  { src: img12, title: 'Journey into Kutch', desc: 'Uncover the vibrant soul of the desert.' },
 ];
+
 
 const HeroCarousel = () => {
   // State to keep track of the current active slide index
@@ -123,22 +127,25 @@ const HeroCarousel = () => {
             <div className="absolute bottom-20 left-10 md:left-20 lg:left-32 p-6 max-w-lg text-white">
               {/* Title with responsive font sizes, glowing effect, and animated slide-up entrance */}
               <h1
-                className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-4
-                  drop-shadow-[0_0_10px_rgba(128,0,128,0.7)] transition-transform duration-700 ease-out
-                  ${index === currentSlideIndex ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-                style={{ transitionDelay: '200ms' }} // Delay animation for sequential effect
-              >
-                {slide.title}
-              </h1>
-              {/* Description text with responsive font sizes and animated slide-up entrance */}
-              <p
-                className={`text-lg md:text-xl leading-relaxed text-gray-300
-                  transition-transform duration-700 ease-out
-                  ${index === currentSlideIndex ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-                style={{ transitionDelay: '350ms' }} // Further delay for description
-              >
-                {slide.desc}
-              </p>
+                    className={`text-7xl md:text-8xl font-bold mb-6
+                      transition-transform duration-700 ease-out
+                      ${index === currentSlideIndex ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                    style={{ transitionDelay: '200ms', fontFamily: 'Playfair Display, serif' }}
+                  >
+                    {slide.title}
+                  </h1>
+
+                  <p
+                    className={`text-4xl md:text-5xl text-orange-300 font-light
+                      transition-transform duration-700 ease-out
+                      ${index === currentSlideIndex ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                    style={{ transitionDelay: '350ms', fontFamily: 'Great Vibes, cursive' }}
+                  >
+                    {slide.desc}
+                  </p>
+
+
+
             </div>
           </div>
         ))}

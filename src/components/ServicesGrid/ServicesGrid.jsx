@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import RannOfKutch from '../../assets/great-rann-of-kutch.jpg';
-import tempoVehicle from '../../assets/vehicles/tempo-12.jpg';
+import RannOfKutch from '../../assets/kalo-dungar.jpg';
+import tempoVehicle from '../../assets/vehicles/audi-a6.jpg';
 
 const services = [
   {

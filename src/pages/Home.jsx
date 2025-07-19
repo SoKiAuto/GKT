@@ -25,8 +25,7 @@ const Home = () => {
    <main
   className="relative min-h-screen font-sans text-stone-800 pt-0 bg-[url('/src/assets/Background.png')] bg-[length:400px_400px] bg-repeat bg-fixed"
 >
-  <div className="absolute inset-0 backdrop-brightness-95 backdrop-contrast-125"></div>
- {/* Hero Section with scrolling images */}
+  {/* Hero Section with scrolling images */}
       {images.length > 0 && <HeroCarousel images={images} />}
 
       {/* Services */}

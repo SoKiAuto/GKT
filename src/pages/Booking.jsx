@@ -69,7 +69,7 @@ const Booking = () => {
       : vehicles.map((v) => ({ id: v.id, label: v.type }));
 
   return (
-    <main className="min-h-screen bg-black/60 dark:bg-white/50 flex justify-center items-start pt-24 pb-16 px-4 sm:px-6 md:px-10 lg:px-20 text-gray-200 dark:text-gray-900 transition-colors duration-500 ease-in-out">
+    <main className="min-h-screen flex justify-center items-start pt-24 pb-16 px-4 sm:px-6 md:px-10 lg:px-20 text-gray-200 dark:text-gray-900 transition-colors duration-500 ease-in-out">
 <section className="max-w-xl w-full bg-neutral-900/80 dark:bg-neutral-100/80 rounded-3xl p-10 shadow-xl backdrop-blur-md border border-neutral-700 dark:border-neutral-300">
         <h1 className="text-4xl font-extrabold mb-12 text-center text-amber-400 dark:text-amber-600 drop-shadow-md">
           Book Your Tour or Vehicle

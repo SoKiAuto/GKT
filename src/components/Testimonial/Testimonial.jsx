@@ -12,7 +12,7 @@ const Testimonial = () => {
         </p>
 
         <div className="text-center">
-          <p className="font-semibold text-orange-400 dark:text-orange-600 text-lg">— Guru Shah, Director</p>
+          <p className="font-semibold text-orange-400 dark:text-orange-600 text-lg">— Mr. Mulshankar, Director</p>
           <p className="text-gray-400 dark:text-gray-500 text-sm mt-1">Founder & CEO, Gurukrupa Travels</p>
         </div>
       </div>
