@@ -2,7 +2,7 @@ import MapEmbed from '../components/MapEmbed';
 
 const Contact = () => {
   return (
-    <main className="min-h-screen bg-neutral-950 dark:bg-white flex justify-center items-start pt-24 pb-16 px-4 sm:px-6 md:px-10 lg:px-20 text-gray-200 dark:text-gray-900 transition-colors duration-500 ease-in-out">
+    <main className="min-h-screenflex justify-center items-start pt-24 pb-16 px-4 sm:px-6 md:px-10 lg:px-20 text-gray-200 dark:text-gray-900 transition-colors duration-500 ease-in-out">
       <section className="max-w-4xl w-full mx-auto">
         <h1 className="text-5xl font-extrabold mb-12 text-center bg-gradient-to-r from-amber-500 via-yellow-500 to-yellow-400 text-transparent bg-clip-text drop-shadow-md">
           Contact Gurukrupa Travels
@@ -12,8 +12,8 @@ const Contact = () => {
         <MapEmbed lat={23.076062} lng={70.121391} />
 
         {/* Contact details below */}
-        <div className="bg-neutral-800 dark:bg-neutral-100 rounded-3xl shadow-lg mt-10 p-8 space-y-8 max-w-xl mx-auto">
-          {/* Address */}
+   <div className="bg-neutral-800/70 dark:bg-white/70 backdrop-blur-md rounded-3xl shadow-xl mt-10 p-8 space-y-8 max-w-xl mx-auto border border-neutral-700 dark:border-gray-300">
+         {/* Address */}
           <div className="flex items-start space-x-4">
             <span className="text-amber-400 dark:text-amber-600 text-3xl select-none">📍</span>
             <div>

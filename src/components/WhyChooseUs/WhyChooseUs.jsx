@@ -21,7 +21,7 @@ const reasons = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="w-full bg-neutral-900 dark:bg-white px-4 sm:px-6 py-20 md:py-28 transition-colors"> {/* swapped bg */}
+    <section className="w-full px-4 sm:px-6 py-20 md:py-28 transition-colors"> {/* swapped bg */}
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold text-gray-100 dark:text-gray-800 tracking-tight"> {/* swapped text */}

@@ -1,7 +1,7 @@
 // src/components/DirectorMessage/DirectorMessage.jsx
 const Testimonial = () => {
   return (
-    <section className="w-full px-4 sm:px-6 py-12 bg-neutral-900 dark:bg-gray-50 flex justify-center transition-colors">
+    <section className="w-full px-4 sm:px-6 py-12 flex justify-center transition-colors">
       <div className="max-w-3xl w-full bg-neutral-950 dark:bg-white rounded-xl shadow-md p-8 md:p-12 border border-neutral-700 dark:border-gray-200 relative">
         <h2 className="text-3xl font-bold text-gray-100 dark:text-gray-800 mb-6 text-center">
           Message from Our Director

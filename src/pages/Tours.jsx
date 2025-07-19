@@ -63,8 +63,8 @@ const Tours = () => {
   };
 
   return (
-    <main className="min-h-screen w-screen px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-20 bg-neutral-950 text-gray-200 dark:bg-white dark:text-gray-900 transition-colors duration-500 ease-in-out">
-      <section className="max-w-[1400px] mx-auto">
+     <main className="min-h-screen w-screen px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-20 text-gray-200 dark:text-gray-900 transition-colors duration-500 ease-in-out bg-transparent">
+        <section className="max-w-[1400px] mx-auto">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white dark:text-gray-900 drop-shadow-md text-center mb-16 md:mb-20 leading-tight">
           Unforgettable <span className="text-amber-500">Adventures</span> Await in Kutch
         </h1>

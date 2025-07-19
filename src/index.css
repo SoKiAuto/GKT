@@ -22,3 +22,119 @@
   animation-name: fadeIn;
   animation-fill-mode: forwards;
 }
+
+
+
+
+body {
+  position: relative;
+  background-color: #0d0d0d; /* fallback */
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  grid-template-rows: repeat(3, 1fr);    /* 3 rows */
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  background-image: url('/src/assets/Background_Dark.png'),
+                    url('/src/assets/Background_Dark.png'),
+                    url('/src/assets/Background_Dark.png'),
+                    url('/src/assets/Background_Dark.png'),
+                    url('/src/assets/Background_Dark.png'),
+                    url('/src/assets/Background_Dark.png'),
+                    url('/src/assets/Background_Dark.png'),
+                    url('/src/assets/Background_Dark.png'),
+                    url('/src/assets/Background_Dark.png'),
+                    url('/src/assets/Background_Dark.png'),
+                    url('/src/assets/Background_Dark.png'),
+                    url('/src/assets/Background_Dark.png'),
+                    url('/src/assets/Background_Dark.png'),
+                    url('/src/assets/Background_Dark.png'),
+                    url('/src/assets/Background_Dark.png');
+  background-repeat: no-repeat;
+  background-size: 20vw 33vh;
+  background-position:
+    0% 0%,
+    20% 0%,
+    40% 0%,
+    60% 0%,
+    80% 0%,
+    0% 33%,
+    20% 33%,
+    40% 33%,
+    60% 33%,
+    80% 33%,
+    0% 66%,
+    20% 66%,
+    40% 66%,
+    60% 66%,
+    80% 66%;
+  transform: rotate(0deg);
+  filter: brightness(0.8) contrast(1.2);
+}
+
+
+/* In your global CSS file or a style tag */
+@keyframes light-sweep {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+body::before {
+  /* ... existing properties ... */
+
+  /* Define CSS variables that JavaScript will update */
+  --parallax-x: 0px;
+  --parallax-y: 0px;
+  --initial-rotation: 5deg; /* Your fixed initial rotation */
+
+  /* Apply the dynamic transform using the variables */
+  transform: rotate(var(--initial-rotation)) translate3d(var(--parallax-x), var(--parallax-y), 0);
+  transform-origin: center center; /* Ensure it rotates and moves from center */
+
+  /* Make sure there's no transition here if you want immediate movement */
+  transition: none; /* Crucial for smooth JS-driven updates */
+}
+
+/* src/index.css or global CSS file */
+.content-wrapper {
+  background-color: rgba(255, 255, 255, 0.85); /* For light mode */
+  backdrop-filter: blur(4px);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+/* or for dark mode */
+.dark .content-wrapper {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.tile {
+  filter: brightness(0.8) contrast(1.1);
+  mix-blend-mode: screen; /* or 'overlay' for intense pop */
+}

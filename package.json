@@ -1,6 +1,6 @@
 {
   "name": "tourism-website",
-  "homepage": "https://sokiauto.github.io/KanDiRa.CA",
+  "homepage": "https://sokiauto.github.io/GKT",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,6 +11,9 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
     "framer-motion": "^12.19.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
