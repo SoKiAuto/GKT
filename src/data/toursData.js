@@ -2,6 +2,7 @@ import classicKutch from '../assets/tours/classic-kutch.jpg';
 import rannUtsav from '../assets/tours/rann-utsav.jpg';
 import spiritualTour from '../assets/tours/spiritual-tour.jpg';
 import heritageCoast from '../assets/tours/heritage-coast.jpg';
+import sixDayTourImage from '../assets/tours/Road-to-Heaven.jpg'; // 
 
 const toursData = [
   {
@@ -138,7 +139,74 @@ const toursData = [
         ]
       }
     ]
+  },
+
+ {
+    id: '5',
+    title: '6 Days Panchtirthi Tour',
+    category: 'Spiritual',
+    image: sixDayTourImage, // Replace with your actual image path
+    days: [
+      {
+        day: 'Day 1 - Nani Panchtirthi',
+        activities: [
+          'Arrival at Gandhidham Railway station / Airport',
+          'Transfer to Bhadreshwar Jain Tirth',
+          'Breakfast at respective dining area',
+          'Poojan at Derasar',
+          'Vanki Tirth Darshan',
+          'Lunch at Vanki Tirth',
+          'On-road visit: Ahinshadham, Bhujpur, Desalpur, Bidada',
+          'Sunset view at Mandvi Beach',
+          'Night halt at 72 Jinalay'
+        ]
+      },
+      {
+        day: 'Day 2 - Moti Panchtirthi',
+        activities: [
+          'Visit Vijay Vilas Palace',
+          'Don Jain Derasar',
+          'Dedhia Tirth',
+          'Sandhan Tirth',
+          'Suthari Tirth',
+          'Kothara Tirth',
+          'Jakhau Tirth',
+          'Naliya Tirth',
+          'Night halt at Tera Tirth'
+        ]
+      },
+      {
+        day: 'Day 3',
+        activities: [
+          'Visit Parsav Vallabh Indrdham',
+          'Visit Khadio Dhrow',
+          'Night halt at Bhuj'
+        ]
+      },
+      {
+        day: 'Day 4',
+        activities: [
+          'Visit Nirona Village (Rogan Art, Copper Bell Art)',
+          'Sunset view at White Rann of Kutch',
+          'Night halt at Dhordo'
+        ]
+      },
+      {
+        day: 'Day 5',
+        activities: [
+          'Visit Kalo Dungar',
+          'Explore Road of Heaven',
+          'Visit Dholavira',
+          'Night halt at Bhuj'
+        ]
+      },
+      {
+        day: 'Day 6',
+        activities: ['Bhuj sightseeing']
+      }
+    ]
   }
 ];
+
 
 export default toursData;
