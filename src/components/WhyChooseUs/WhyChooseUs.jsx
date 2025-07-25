@@ -3,49 +3,49 @@ import { FiMap, FiStar, FiHeart } from 'react-icons/fi';
 
 const reasons = [
   {
-    icon: <FiMap className="text-gray-300 dark:text-gray-700 text-4xl md:text-5xl" />, // swapped colors
+    icon: <FiMap className="text-orange-400 text-4xl md:text-5xl" />,
     title: 'Diverse Destinations',
-    desc: 'From deserts to salt plains, find unique experiences.',
+    desc: 'From deserts to salt plains, experience the real Kutch like never before.',
   },
   {
-    icon: <FiStar className="text-gray-300 dark:text-gray-700 text-4xl md:text-5xl" />,
+    icon: <FiStar className="text-orange-400 text-4xl md:text-5xl" />,
     title: 'Top Rated Services',
-    desc: 'Friendly booking, great support, and happy travelers.',
+    desc: 'Personalized support, smooth bookings & top travel reviews.',
   },
   {
-    icon: <FiHeart className="text-gray-300 dark:text-gray-700 text-4xl md:text-5xl" />,
+    icon: <FiHeart className="text-orange-400 text-4xl md:text-5xl" />,
     title: 'Trusted & Loved',
-    desc: 'Thousands of glowing testimonials from explorers.',
+    desc: 'Thousands of happy explorers sharing beautiful memories.',
   },
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section className="w-full px-4 sm:px-6 py-20 md:py-28 transition-colors"> {/* swapped bg */}
+    <section
+      className="w-full px-4 sm:px-6 py-24 md:py-32 bg-cover bg-center transition-all duration-500"
+      style={{ backgroundImage: "url('/images/dune-bg.jpg')" }} // desert image path
+    >
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-semibold text-gray-100 dark:text-gray-800 tracking-tight"> {/* swapped text */}
-            Why Choose Us
+           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-amber-700 drop-shadow-lg">
+             Why Choose Us
           </h2>
-          <p className="text-gray-400 dark:text-gray-500 text-lg mt-4 max-w-xl mx-auto"> {/* swapped text */}
-            Crafted for comfort. Designed for discovery.
+         <p className="text-lg mt-4 text-gray-600 max-w-xl mx-auto">
+            Designed for comfort. Powered by passion.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-4">
           {reasons.map(({ icon, title, desc }) => (
             <div
               key={title}
-              className="flex flex-col items-center text-center p-8 bg-neutral-950 dark:bg-white border border-neutral-700 dark:border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300"              >
-              <div className="w-20 h-20 flex items-center justify-center mb-6 rounded-full bg-neutral-800 dark:bg-gray-100 shadow-inner"> {/* swapped bg */}
+              className="flex flex-col items-center text-center p-8 bg-black/50 backdrop-blur-md rounded-2xl shadow-xl border border-white/10 hover:scale-105 transition-transform duration-300"
+            >
+              <div className="w-20 h-20 flex items-center justify-center mb-6 rounded-full bg-orange-100/20 shadow-inner">
                 {icon}
               </div>
-              <h3 className="text-xl font-medium text-gray-100 dark:text-gray-800 mb-2"> {/* swapped text */}
-                {title}
-              </h3>
-              <p className="text-gray-400 dark:text-gray-500 text-sm leading-relaxed"> {/* swapped text */}
-                {desc}
-              </p>
+              <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
+              <p className="text-orange-100 text-sm leading-relaxed">{desc}</p>
             </div>
           ))}
         </div>
