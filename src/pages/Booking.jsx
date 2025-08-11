@@ -50,12 +50,25 @@ const AllTours = () => {
     ? tours : vehicles).map(p => ({ id: p.id, label: p.title || p.type }));
 
   return (
-   <main className="min-h-screen w-full px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-20 text-gray-800 bg-transparent overflow-x-hidden">      <section className="max-w-[1400px] mx-auto">
-        <h1 className="py-14 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-center mb-16 md:mb-20 leading-tight
-          bg-gradient-to-br from-amber-500 via-orange-400 to-yellow-300
-          text-transparent bg-clip-text drop-shadow-lg">
-          Book Your <span className="text-white drop-shadow-md">Adventure</span> Today!
-        </h1>
+   <main className=" relative z-10 min-h-screen w-full px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-20 text-gray-800 bg-transparent overflow-x-hidden">      <section className="max-w-[1400px] mx-auto">
+<h1 className="py-14 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-center mb-16 md:mb-20 leading-tight
+bg-gradient-to-br from-amber-500 via-orange-400 to-yellow-300
+text-transparent bg-clip-text drop-shadow-lg">
+Book Your
+<span
+  className="relative inline-block px-2 py-1 mx-2 font-bangers
+  bg-gradient-to-br from-gray-300 to-gray-400 bg-clip-text text-transparent 
+  drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] animate-glitch-text"
+  style={{
+    WebkitTextStroke: '1.5px black',
+    textStroke: '1.5px black', // for other browsers
+  }}
+>
+  Adventure
+</span>
+
+Today!
+</h1>
 
         {message && (
           <div className={`mb-8 p-4 rounded-lg text-center font-semibold

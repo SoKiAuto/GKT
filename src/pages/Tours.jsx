@@ -59,7 +59,33 @@ const Tours = () => {
        <h1 className="py-14 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-center mb-16 md:mb-20 leading-tight 
           bg-gradient-to-br from-amber-500 via-orange-400 to-yellow-300 
           text-transparent bg-clip-text drop-shadow-lg">
-          Unforgettable <span className="text-white drop-shadow-md">Adventures</span> Await in <span className="text-white drop-shadow-md">Kutch</span>
+          Unforgettable 
+          
+          <span
+  className="relative inline-block px-2 py-1 mx-2 font-bangers
+  bg-gradient-to-br from-gray-300 to-gray-400 bg-clip-text text-transparent 
+  drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] animate-glitch-text"
+  style={{
+    WebkitTextStroke: '1.5px black',
+    textStroke: '1.5px black', // for other browsers
+  }}
+>
+  Adventure
+</span>
+          Await in 
+          
+         <span
+  className="relative inline-block px-2 py-1 mx-2 font-bangers
+  bg-gradient-to-br from-gray-300 to-gray-400 bg-clip-text text-transparent 
+  drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] animate-glitch-text"
+  style={{
+    WebkitTextStroke: '1.5px black',
+    textStroke: '1.5px black', // for other browsers
+  }}
+>
+  Kutch
+</span>
+
         </h1>
 
 

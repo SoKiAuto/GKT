@@ -30,8 +30,8 @@ const WhyChooseUs = () => {
            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-amber-700 drop-shadow-lg">
              Why Choose Us
           </h2>
-         <p className="text-lg mt-4 text-gray-600 max-w-xl mx-auto">
-            Designed for comfort. Powered by passion.
+         <p className="text-xl mt-6 text-red-950 max-w-4xl mx-auto font-bold leading-relaxed drop-shadow-lg">
+        Designed for comfort. Powered by passion.
           </p>
         </div>
 

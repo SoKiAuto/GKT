@@ -49,3 +49,80 @@ body {
   animation-name: fadeIn;
   animation-fill-mode: forwards;
 }
+
+@keyframes slowScroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 1000px;
+  }
+}
+
+@keyframes slowerScroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 500px 800px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slowScroll {
+  animation: slowScroll 60s linear infinite;
+  background-size: cover;
+}
+
+.animate-slowerScroll {
+  animation: slowerScroll 100s linear infinite;
+  background-size: cover;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+
+
+/* Custom text shadow utility class */
+@keyframes float {
+  0% { transform: translateY(0px); opacity: 0.4; }
+  50% { transform: translateY(-10px); opacity: 0.5; }
+  100% { transform: translateY(0px); opacity: 0.4; }
+}
+
+.float-animation {
+  animation: float 14s ease-in-out infinite;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+.font-bangers {
+  font-family: 'Bangers', cursive;
+  /* You may need to adjust the font size for best results with your design */
+}
+
+@keyframes glitch-text {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.animate-glitch-text {
+  animation: glitch-text 0.5s infinite linear alternate;
+}
