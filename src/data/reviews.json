@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Amit Patel",
+    "review": "Amazing experience! The desert safari was unforgettable.",
+    "rating": 5
+  },
+  {
+    "name": "Sneha R.",
+    "review": "Great service and beautiful locations. Highly recommended!",
+    "rating": 4
+  },
+  {
+    "name": "Rahul Verma",
+    "review": "Good overall, but could improve accommodation quality.",
+    "rating": 3
+  },
+  {
+    "name": "Pooja Desai",
+    "review": "Loved every moment! Friendly guides and well-planned itinerary.",
+    "rating": 5
+  },
+  {
+    "name": "Karan Singh",
+    "review": "Fantastic adventure with great food and cozy stays.",
+    "rating": 5
+  },
+  {
+    "name": "Nisha Shah",
+    "review": "Smooth booking process and great customer support.",
+    "rating": 4
+  },
+  {
+    "name": "Vikram Joshi",
+    "review": "Beautiful places, but transport could be improved.",
+    "rating": 3
+  },
+  {
+    "name": "Simran Kaur",
+    "review": "Amazing cultural experiences,\ndefinitely coming back!",
+    "rating": 5
+  },
+  {
+    "name": "Deepak Mehta",
+    "review": "Very organized tours,\nenjoyed every bit.",
+    "rating": 4
+  },
+  {
+    "name": "Anjali R.",
+    "review": "Helpful staff and stunning locations. Highly recommend!",
+    "rating": 5
+  },
+  {
+    "name": "Rajesh Kumar",
+    "review": "Could be better in terms of\namenities but overall good.",
+    "rating": 3
+  },
+  {
+    "name": "Priya Gupta",
+    "review": "Absolutely loved the desert\nnights and hospitality.",
+    "rating": 5
+  }
+]

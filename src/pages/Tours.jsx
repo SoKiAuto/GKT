@@ -42,62 +42,54 @@ const Tours = () => {
     swipeToSlide: true,
     cssEase: 'ease-out',
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 2, arrows: false },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 1, dots: false, arrows: false },
-      },
+      { breakpoint: 1280, settings: { slidesToShow: 2, arrows: false } },
+      { breakpoint: 768, settings: { slidesToShow: 1, dots: true, arrows: false } },
     ],
   };
 
   return (
-   <main className="min-h-screen w-screen px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-20 text-gray-200 dark:text-gray-900 bg-transparent">
+    <main className="min-h-screen w-screen px-3 sm:px-5 md:px-10 lg:px-20 py-10 sm:py-14 md:py-20 text-gray-900 bg-transparent">
       <section className="max-w-[1400px] mx-auto">
-       <h1 className="py-14 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-center mb-16 md:mb-20 leading-tight 
+        
+        {/* Heading */}
+        <h1 className="py-8 sm:py-12 md:py-14 text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-center mb-10 sm:mb-16 md:mb-20 leading-tight 
           bg-gradient-to-br from-amber-500 via-orange-400 to-yellow-300 
           text-transparent bg-clip-text drop-shadow-lg">
           Unforgettable 
-          
           <span
-  className="relative inline-block px-2 py-1 mx-2 font-bangers
-  bg-gradient-to-br from-gray-300 to-gray-400 bg-clip-text text-transparent 
-  drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] animate-glitch-text"
-  style={{
-    WebkitTextStroke: '1.5px black',
-    textStroke: '1.5px black', // for other browsers
-  }}
->
-  Adventure
-</span>
+            className="relative inline-block px-1 sm:px-2 py-0.5 sm:py-1 mx-1 sm:mx-2 font-bangers
+            bg-gradient-to-br from-gray-300 to-gray-400 bg-clip-text text-transparent 
+            drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] animate-glitch-text"
+            style={{
+              WebkitTextStroke: '1.5px black',
+              textStroke: '1.5px black',
+            }}
+          >
+            Adventure
+          </span>
           Await in 
-          
-         <span
-  className="relative inline-block px-2 py-1 mx-2 font-bangers
-  bg-gradient-to-br from-gray-300 to-gray-400 bg-clip-text text-transparent 
-  drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] animate-glitch-text"
-  style={{
-    WebkitTextStroke: '1.5px black',
-    textStroke: '1.5px black', // for other browsers
-  }}
->
-  Kutch
-</span>
-
+          <span
+            className="relative inline-block px-1 sm:px-2 py-0.5 sm:py-1 mx-1 sm:mx-2 font-bangers
+            bg-gradient-to-br from-gray-300 to-gray-400 bg-clip-text text-transparent 
+            drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] animate-glitch-text"
+            style={{
+              WebkitTextStroke: '1.5px black',
+              textStroke: '1.5px black',
+            }}
+          >
+            Kutch
+          </span>
         </h1>
-
 
         {/* Carousel */}
         {activeFilter === 'All Tours' && (
-          <div className="mb-20 px-2">
-            <h2 className="text-2xl sm:text-3xl font-bold text-center sm:text-left text-gray-800 mb-8">
+          <div className="mb-12 sm:mb-16 lg:mb-20 px-1 sm:px-2">
+            <h2 className="text-xl sm:text-3xl font-bold text-center sm:text-left text-gray-800 mb-6 sm:mb-8">
               Featured Tours & Exclusive Packages
             </h2>
             <Slider {...sliderSettings} className="tour-slider">
               {tours.map((tour) => (
-                <div key={tour.id} className="p-3">
+                <div key={tour.id} className="p-2 sm:p-3">
                   <TourCard tour={tour} showDetailsToggle={false} />
                 </div>
               ))}
@@ -106,11 +98,11 @@ const Tours = () => {
         )}
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-14 md:mb-20 px-2">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10 sm:mb-14 md:mb-20 px-2">
           {['All Tours', 'Adventure', 'Family', 'Budget', 'Heritage'].map((filter) => (
             <button
               key={filter}
-              className={`px-6 py-3 rounded-full text-base sm:text-lg font-semibold tracking-wide transition-all duration-300 ease-out transform focus:outline-none ${
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-semibold tracking-wide transition-all duration-300 ease-out transform focus:outline-none ${
                 activeFilter === filter
                   ? 'bg-amber-500 text-white shadow-md scale-105'
                   : 'bg-white border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white hover:shadow-lg hover:scale-105'
@@ -124,7 +116,7 @@ const Tours = () => {
         </div>
 
         {/* Tour Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
           {filteredTours.length > 0 ? (
             filteredTours.map((tour) => (
               <div key={tour.id}>
@@ -132,7 +124,7 @@ const Tours = () => {
               </div>
             ))
           ) : (
-            <div className="col-span-full text-center text-xl text-gray-500 py-10">
+            <div className="col-span-full text-center text-base sm:text-xl text-gray-500 py-6 sm:py-10">
               No tours found for this category.
             </div>
           )}

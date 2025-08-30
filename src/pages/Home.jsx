@@ -1,4 +1,4 @@
-// src/pages/Home.jsx (or wherever your Home page is)
+// src/pages/Home.jsx
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -22,21 +22,37 @@ const Home = () => {
   }, []);
 
   return (
-   <main
-  className="relative min-h-screen font-sans text-stone-800 pt-0 bg-[url('/src/assets/Background.png')] bg-[length:400px_400px] bg-repeat bg-fixed"
->
-  {/* Hero Section with scrolling images */}
-      {images.length > 0 && <HeroCarousel images={images} />}
+    <main
+      className="
+        relative min-h-screen font-sans text-stone-800
+        pt-0
+        bg-[url('/src/assets/Background.png')]
+        bg-repeat bg-fixed
+        bg-[length:300px_300px] sm:bg-[length:400px_400px]
+        px-2 sm:px-4 md:px-6
+      "
+    >
+      {/* Hero Section with scrolling images */}
+      {images.length > 0 && (
+        <section className="mb-8 sm:mb-12 md:mb-16">
+          <HeroCarousel images={images} />
+        </section>
+      )}
 
       {/* Services */}
-      <ServicesGrid />
+      <section className="mb-8 sm:mb-12 md:mb-16">
+        <ServicesGrid />
+      </section>
 
       {/* Why Choose Us */}
-      <WhyChooseUs />
+      <section className="mb-8 sm:mb-12 md:mb-16">
+        <WhyChooseUs />
+      </section>
 
       {/* Testimonial */}
-      <Testimonial />
-
+      <section className="mb-8 sm:mb-12 md:mb-16">
+        <Testimonial />
+      </section>
     </main>
   );
 };

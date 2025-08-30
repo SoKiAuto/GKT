@@ -40,9 +40,9 @@ const VehicleCard = ({ vehicle, showDetailsToggle = true }) => {
   };
 
   return (
-    <div className="bg-white/60 backdrop-blur-lg border border-amber-200 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+    <div className="bg-white/60 backdrop-blur-lg border border-amber-200 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-lg mx-auto">
       {/* Image */}
-      <div className="relative w-full h-64 sm:h-72 overflow-hidden">
+      <div className="relative w-full h-56 sm:h-64 overflow-hidden">
         <img
           src={images[0] || 'https://placehold.co/600x400?text=No+Image'}
           alt={vehicle.type}
@@ -56,37 +56,37 @@ const VehicleCard = ({ vehicle, showDetailsToggle = true }) => {
       </div>
 
       {/* Text Content */}
-      <div className="p-6 text-gray-800">
-        <h3 className="text-2xl font-bold mb-3 tracking-tight text-amber-600">
+      <div className="p-4 sm:p-6 text-gray-800">
+        <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 tracking-tight text-amber-600">
           {vehicle.type}
         </h3>
 
         {vehicle.category && (
-          <p className="text-sm font-semibold text-amber-500 mb-2">
+          <p className="text-xs sm:text-sm font-semibold text-amber-500 mb-1 sm:mb-2">
             {vehicle.category}
           </p>
         )}
 
         {vehicle.capacity && (
-          <p className="text-sm font-medium text-gray-700 mb-2">
+          <p className="text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
             <span className="font-semibold text-amber-600">Capacity:</span>{' '}
             {vehicle.capacity}
           </p>
         )}
 
         {images.length > 1 && (
-          <p className="text-xs italic text-gray-500">
+          <p className="text-[10px] sm:text-xs italic text-gray-500">
             + {images.length - 1} interior image
             {images.length > 2 ? 's' : ''}
           </p>
         )}
 
         {/* Buttons */}
-        <div className="mt-2 space-x-2">
+        <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row gap-2 sm:gap-3">
           {showDetailsToggle && (
             <button
               onClick={() => setShowDetails(!showDetails)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all text-center ${
                 showDetails
                   ? 'bg-amber-600 text-white hover:bg-amber-700'
                   : 'bg-amber-200 text-amber-700 hover:bg-amber-300'
@@ -99,7 +99,7 @@ const VehicleCard = ({ vehicle, showDetailsToggle = true }) => {
           {showDetails && (
             <button
               onClick={() => setShowBookingForm(true)}
-              className="px-5 py-2 rounded-full text-sm font-semibold bg-green-600 text-white hover:bg-green-700 transition-all"
+              className="px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-green-600 text-white hover:bg-green-700 transition-all text-center"
             >
               Book Now
             </button>
@@ -109,10 +109,10 @@ const VehicleCard = ({ vehicle, showDetailsToggle = true }) => {
         {/* Details Section */}
         <div
           className={`transition-all duration-500 ease-in-out overflow-hidden ${
-            showDetails ? 'max-h-[1000px] mt-6' : 'max-h-0'
+            showDetails ? 'max-h-[1000px] mt-4' : 'max-h-0'
           }`}
         >
-          <div className="space-y-3 text-sm text-gray-700">
+          <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-gray-700">
             {vehicle.privateRate && (
               <p>
                 <span className="font-semibold text-amber-600">
@@ -154,8 +154,8 @@ const VehicleCard = ({ vehicle, showDetailsToggle = true }) => {
                 : 'translateX(100%)'
             }}
           >
-            <div className="p-6 border-b border-gray-200 flex justify-between items-center">
-              <h3 className="text-xl font-semibold text-amber-600">
+            <div className="p-4 sm:p-6 border-b border-gray-200 flex justify-between items-center">
+              <h3 className="text-lg sm:text-xl font-semibold text-amber-600">
                 Book This Vehicle
               </h3>
               <button
@@ -168,7 +168,7 @@ const VehicleCard = ({ vehicle, showDetailsToggle = true }) => {
 
             <form
               onSubmit={handleBookingSubmit}
-              className="p-6 space-y-4"
+              className="p-4 sm:p-6 space-y-3 sm:space-y-4"
             >
               {['name', 'phone', 'email'].map((field) => (
                 <div key={field}>
@@ -187,7 +187,7 @@ const VehicleCard = ({ vehicle, showDetailsToggle = true }) => {
                     value={form[field]}
                     onChange={handleChange}
                     required={field !== 'email'}
-                    className="w-full px-4 py-2 rounded-lg border border-amber-300 placeholder-gray-500 text-sm"
+                    className="w-full px-3 sm:px-4 py-2 rounded-lg border border-amber-300 placeholder-gray-500 text-sm"
                   />
                 </div>
               ))}
@@ -198,7 +198,7 @@ const VehicleCard = ({ vehicle, showDetailsToggle = true }) => {
                 value={form.date}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 rounded-lg border border-amber-300 text-sm"
+                className="w-full px-3 sm:px-4 py-2 rounded-lg border border-amber-300 text-sm"
               />
 
               <input
@@ -208,12 +208,12 @@ const VehicleCard = ({ vehicle, showDetailsToggle = true }) => {
                 value={form.vehicleType}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 rounded-lg border border-amber-300 text-sm"
+                className="w-full px-3 sm:px-4 py-2 rounded-lg border border-amber-300 text-sm"
               />
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-green-600 to-emerald-500 hover:from-green-700 hover:to-emerald-600 text-white font-bold py-3 rounded-xl transition"
+                className="w-full bg-gradient-to-r from-green-600 to-emerald-500 hover:from-green-700 hover:to-emerald-600 text-white font-bold py-3 rounded-xl transition text-sm sm:text-base"
               >
                 Send Booking via WhatsApp
               </button>
