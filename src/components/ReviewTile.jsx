@@ -24,7 +24,9 @@ const getInitials = (name) => {
 const ReviewTile = ({ name, review, rating, time, owner_reply }) => {
   return (
     <div
-      className="inline-block bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 min-w-[320px] max-w-[320px] p-8 border border-gray-100 box-border flex flex-col"
+      className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 
+                 min-w-[320px] max-w-[320px] p-6 border border-gray-100 
+                 flex flex-col items-start"
       role="article"
       aria-label={`Review by ${name}`}
     >
@@ -58,7 +60,7 @@ const ReviewTile = ({ name, review, rating, time, owner_reply }) => {
 
       {/* Owner reply */}
       {owner_reply && (
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 mt-2">
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 mt-2 leading-relaxed text-wrap break-words">
           <p className="text-xs text-gray-500 font-semibold mb-1">Owner’s reply:</p>
           <p className="text-gray-700 text-sm leading-snug">{owner_reply}</p>
         </div>

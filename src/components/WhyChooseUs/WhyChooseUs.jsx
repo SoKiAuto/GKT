@@ -75,38 +75,40 @@ const WhyChooseUs = () => {
           </h2>
 
           <div className=" relative group">
-            <div className="flex animate-scroll whitespace-nowrap space-x-6">
-              {[...reviews, ...reviews].map((reviewData, index) => (
+          <div className="flex animate-scroll whitespace-nowrap space-x-6 items-start">
+            {[...reviews, ...reviews].map((reviewData, index) => (
                 <ReviewTile
                   key={index} // Use index as key, or a unique ID from reviewData if available
                   name={reviewData.name}
                   review={reviewData.review}
                   rating={reviewData.rating}
                   time={reviewData.time}           // ✅ Added
-                  ownerReply={reviewData.owner_reply}// ✅ Added
+                 owner_reply={reviewData.owner_reply}// ✅ Added
                 />
               ))}
             </div>
           </div>
           
           {/* CSS for scrolling */}
-          <style>{`
-            @keyframes scroll {
-              0% {
-                transform: translateX(0%);
-              }
-              100% {
-                transform: translateX(-50%);
-              }
-            }
-            .animate-scroll {
-              animation: scroll 20s linear infinite; /* Slower animation for smoothness */
-            }
+         <style>{`
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .animate-scroll {
+    display: inline-flex;
+    animation: scroll 80s linear infinite;
+    width: max-content; /* ensures it takes up only its needed width */
+  }
+  .group:hover .animate-scroll {
+    animation-play-state: paused;
+  }
+`}</style>
 
-            .group:hover .animate-scroll {
-              animation-play-state: paused; /* Pause on hover */
-            }
-          `}</style>
         </div>
       </section>
     </>
