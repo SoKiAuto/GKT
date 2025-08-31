@@ -1,7 +1,7 @@
 import React from 'react';
-import { FiStar as StarIcon } from 'react-icons/fi'; // Import StarIcon here for self-containment
+import { FiStar as StarIcon } from 'react-icons/fi';
 
-// Helper function to render stars (can be passed as prop or defined here if truly isolated)
+// Helper function to render stars
 const renderStars = (count) =>
   [...Array(5)].map((_, i) => (
     <StarIcon
@@ -12,7 +12,7 @@ const renderStars = (count) =>
     />
   ));
 
-// Helper function to get initials (can be passed as prop or defined here)
+// Helper function to get initials
 const getInitials = (name) => {
   return name
     .split(' ')
@@ -21,7 +21,7 @@ const getInitials = (name) => {
     .toUpperCase();
 };
 
-const ReviewTile = ({ name, review, rating }) => {
+const ReviewTile = ({ name, review, rating, time, owner_reply }) => {
   return (
     <div
       className="inline-block bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 min-w-[320px] max-w-[320px] p-8 border border-gray-100 box-border flex flex-col"
@@ -40,14 +40,29 @@ const ReviewTile = ({ name, review, rating }) => {
           </div>
         </div>
       </div>
-      
-      {/* Review text with proper wrapping */}
+
+      {/* Review text */}
       <p
-        className="text-gray-700 text-sm leading-relaxed text-wrap break-words" // text-wrap and break-words for proper wrapping
-        style={{ overflowWrap: 'break-word', hyphens: 'auto' }} // Additional CSS for robust word breaking
+        className="text-gray-700 text-sm leading-relaxed text-wrap break-words mb-3"
+        style={{ overflowWrap: 'break-word', hyphens: 'auto' }}
       >
         {review}
       </p>
+
+      {/* Time */}
+      {time && (
+        <p className="text-xs text-gray-500 mb-2">
+          {time}
+        </p>
+      )}
+
+      {/* Owner reply */}
+      {owner_reply && (
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 mt-2">
+          <p className="text-xs text-gray-500 font-semibold mb-1">Owner’s reply:</p>
+          <p className="text-gray-700 text-sm leading-snug">{owner_reply}</p>
+        </div>
+      )}
     </div>
   );
 };

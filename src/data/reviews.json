@@ -1,62 +1,100 @@
 [
   {
-    "name": "Amit Patel",
-    "review": "Amazing experience! The desert safari was unforgettable.",
-    "rating": 5
+    "name": "Anonymous",
+    "rating": 5,
+    "time": "a year ago",
+    "review": "It was so good experience. Condition of hired vehicle was very good. Pricing is absolutely reasonable even in peak season time. The owner Mr Rajesh (Raju bhai) is very gentle and polite person.",
+    "owner_reply": "Thankyou sir we are always happy to help you"
   },
   {
-    "name": "Sneha R.",
-    "review": "Great service and beautiful locations. Highly recommended!",
-    "rating": 4
+    "name": "Vaibhav Gala",
+    "rating": 5,
+    "time": "11 months ago",
+    "review": "Best service in Gandhidham and all over Kutch, well maintained car, genuine and reliable people 👍",
+    "owner_reply": "Thankyou welcome sir"
   },
   {
-    "name": "Rahul Verma",
-    "review": "Good overall, but could improve accommodation quality.",
-    "rating": 3
+    "name": "Gopal Joshi",
+    "rating": 5,
+    "time": "9 months ago",
+    "review": "Excellent Self Drive Car Rental Service in Kutch. If you are coming to Bhuj or Gandhidham and are planning to travel Rann of Kutch, Kalo Dungar, Vijay Vilas Palace, Dholavira, Road to Heaven, I highly recommend you to book a car from them. They have good, clean, functional, high quality sedan cars available for self drive hire.",
+    "owner_reply": "Thankyou and you have always welcome"
   },
   {
-    "name": "Pooja Desai",
-    "review": "Loved every moment! Friendly guides and well-planned itinerary.",
-    "rating": 5
+    "name": "Sweta Tanna",
+    "rating": 5,
+    "time": "a year ago",
+    "review": "The experience was very good. Had a very smooth service. Definitely trustworthy. Amazing condition of car and unbelievable hospitality at such good rates. I will suggest everybody to get their services, really loved it 👍",
+    "owner_reply": "Thankyou you have always welcome"
   },
   {
-    "name": "Karan Singh",
-    "review": "Fantastic adventure with great food and cozy stays.",
-    "rating": 5
+    "name": "Jigar Gogri",
+    "rating": 5,
+    "time": "a year ago",
+    "review": "Great service by Raju bhai and Krunal bhai. Got a well maintained car at a highly competitive price! Pickup drop service from Gandhidham Railway station. Highly recommend for self drive cars in Kutch!",
+    "owner_reply": "Thanks Jigar bhai you have always welcome from us"
   },
   {
-    "name": "Nisha Shah",
-    "review": "Smooth booking process and great customer support.",
-    "rating": 4
+    "name": "Kaushal Vedant",
+    "rating": 5,
+    "time": "a year ago",
+    "review": "The best car rental service available for self drive in Kutch. Always helpful and cool nature of Raju Bhai makes the experience wonderful. Thank you very much Gurukrupa Travels and Raju Bhai. Wish you all the best 👍👍",
+    "owner_reply": null
   },
   {
-    "name": "Vikram Joshi",
-    "review": "Beautiful places, but transport could be improved.",
-    "rating": 3
+    "name": "Mayank Raiyani",
+    "rating": 5,
+    "time": "a year ago",
+    "review": "I had hired a car for White Desert from Gandhidham Railway Station and it was a superb experience with Gurukrupa Travels cars and driver. The owner helped us a lot in planning our tour with special spots and dinner at White Desert. Thanks Gurukrupa Travels for making my journey memorable and joyful once again.",
+    "owner_reply": "Thanks we are always happy to help you, welcome and visit again"
   },
   {
-    "name": "Simran Kaur",
-    "review": "Amazing cultural experiences,\ndefinitely coming back!",
-    "rating": 5
+    "name": "Varun Talati",
+    "rating": 5,
+    "time": "a year ago",
+    "review": "I had a great experience with Rajesh bhai and Krunal bhai. I rented a self-drive car for a day. They had options for self-drive and with driver as well. The car was in excellent condition, and the owner was very helpful for the trip. The whole rental process was smooth and easy. Highly recommend!",
+    "owner_reply": "Thankyou sir we are always happy to help you, welcome and visit again"
   },
   {
-    "name": "Deepak Mehta",
-    "review": "Very organized tours,\nenjoyed every bit.",
-    "rating": 4
+    "name": "Munaf Popatia",
+    "rating": 5,
+    "time": "2 weeks ago",
+    "review": "Very good service. No hidden charges. Very good nature.",
+    "owner_reply": null
   },
   {
-    "name": "Anjali R.",
-    "review": "Helpful staff and stunning locations. Highly recommend!",
-    "rating": 5
+    "name": "Mayank Shah",
+    "rating": 5,
+    "time": "5 months ago",
+    "review": "I am really very thankful to Kunal bhai who was in constant touch with us during the tour. Lakhan bhai as a driver was very cooperative & I will highly recommend to be a part of Gurukrupa tour.",
+    "owner_reply": "You have most welcome. Thankyou 🙏🙏🙏"
   },
   {
-    "name": "Rajesh Kumar",
-    "review": "Could be better in terms of\namenities but overall good.",
-    "rating": 3
+    "name": "Raj Patel",
+    "rating": 5,
+    "time": "a month ago",
+    "review": "Best car service provider in city. Always on time.",
+    "owner_reply": null
   },
   {
-    "name": "Priya Gupta",
-    "review": "Absolutely loved the desert\nnights and hospitality.",
-    "rating": 5
+    "name": "Rahul Shah",
+    "rating": 5,
+    "time": "6 months ago",
+    "review": "Rajubhai and his son Krunal are truly wonderful, humble and very cooperative people. Their services are up to the mark with professional approach and 100% customer satisfaction commitments. One of the best travel agencies with years of experience and well maintained fleet of cars 👍👍👍",
+    "owner_reply": "You have always welcome sir. Thankyou 🙏🙏🙏"
+  },
+  {
+    "name": "Minoo Shah",
+    "rating": 5,
+    "time": "a month ago",
+    "review": "I used their car in Kutch for temple visits. It was a lovely experience and Shri Raju Sir is so lively and full of historical details of places, their importance, and very polite and warm. Highly recommend.",
+    "owner_reply": "Thankyou mem. Our car has become holy thanks to the steps of people like you 🙏🙏🙏"
+  },
+  {
+    "name": "Salim Sayani",
+    "rating": 5,
+    "time": "2 months ago",
+    "review": "Best service in city, good behaviour staff and well maintained cars. Thank you Rajesh Sir. I'll visit again. 😊",
+    "owner_reply": "Thanks for your best response"
   }
 ]

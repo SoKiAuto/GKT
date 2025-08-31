@@ -3,6 +3,9 @@ import rannUtsav from '../assets/tours/rann-utsav.jpg';
 import spiritualTour from '../assets/tours/spiritual-tour.jpg';
 //import heritageCoast from '../assets/tours/heritage-coast.jpg';
 import sixDayTourImage from '../assets/tours/Road-to-Heaven.jpg'; // 
+import exploreKutchImage from '../assets/RunUtsav.jpeg'; // Or Temple.jpeg if you prefer
+
+
 
 const toursData = [
  {
@@ -118,6 +121,76 @@ const toursData = [
       ]
     }
   ]
+},
+{
+  id: '4', // Make sure it's unique — looks like '4' is the next available
+  title: 'Explore Kutch – 4 Nights / 5 Days',
+  category: 'Culture & Heritage',
+  duration: '4 Nights / 5 Days',
+  destinations: 'Bhuj · Mandvi · Dhordo (White Rann) · Dholavira',
+  image: exploreKutchImage,
+  days: [
+    {
+      dayTitle: 'Day 1: Arrival at Bhuj',
+      activities: [
+        'Check-in at hotel – 10:00 AM',
+        'Visit Smritivan Earthquake Memorial & Museum',
+        'Explore Kutch Science Museum',
+        'Patriotic tribute at Vande Mataram Memorial, Bhujodi',
+        'Evening at leisure',
+        'Overnight stay in Bhuj'
+      ]
+    },
+    {
+      dayTitle: 'Day 2: Mandvi Coastal & Heritage Tour',
+      activities: [
+        'Breakfast at hotel',
+        'Depart for Mandvi (Approx. 60 km | 1.5 hrs)',
+        'Visit 72 Jinalay Jain Temple, Koday',
+        'Explore Ambe Dham Temple, Godhra Hill',
+        'Tour Vijay Vilas Palace',
+        'View traditional shipbuilding at Mandvi Shipyard',
+        'Relax at Mandvi Beach',
+        'Return to Bhuj in the evening',
+        'Overnight stay in Bhuj'
+      ]
+    },
+    {
+      dayTitle: 'Day 3: West Kutch Pilgrimage Circuit',
+      activities: [
+        'Early breakfast & departure',
+        'Darshan at Maa Ashapura Temple (Matano Madh)',
+        'Visit Narayan Sarovar – sacred lake',
+        'Explore Koteshwar Mahadev Temple near the coast',
+        'Return to Bhuj in the evening',
+        'Overnight stay in Bhuj'
+      ]
+    },
+    {
+      dayTitle: 'Day 4: Transfer to Dhordo – White Rann Experience',
+      activities: [
+        'Breakfast & check-out from Bhuj hotel',
+        'Enroute visit: Shree Swaminarayan Temple, Bhuj',
+        'Stop at Rakshak Van (green conservation park)',
+        'Arrival & lunch at Dhordo resort',
+        'Enjoy resort activities & cultural programs',
+        'Sunset at the White Rann (Salt Desert)',
+        'Explore Rann Utsav Fair – shopping, food & shows',
+        'Dinner & live Kutchi folk music',
+        'Overnight stay in Dhordo'
+      ]
+    },
+    {
+      dayTitle: 'Day 5: Dhordo – Kalo Dungar – Dholavira – Departure',
+      activities: [
+        'Morning excursion to Kalo Dungar (Black Hill)',
+        'Scenic drive through "Road of Heaven"',
+        'Visit UNESCO-listed Dholavira Archaeological Site',
+        'Evening drop at Bhuj Railway Station / Airport (after 7:00 PM)'
+      ]
+    }
+  ],
+  note: 'Ideal for culture, nature, and spiritual experiences. All transfers, meals, and entry fees included as per itinerary.'
 },
 {
   id: '5',
