@@ -98,14 +98,17 @@ const Contact = () => {
             <ul className="space-y-3 text-amber-700 font-medium">
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5" />
-                <a href="mailto:info@gurukrupatravels.com" className="underline hover:text-amber-500 transition">
-                  info@gurukrupatravels.com
+                <a href="mailto:gurukrupatravels5555@gmail.com" className="underline hover:text-amber-500 transition">
+                  gurukrupatravels5555@gmail.com
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <MessageCircle className="w-5 h-5" />
                 <a href="https://wa.me/919879714494" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500 transition">
-                  +91 98797 14494 (WhatsApp)
+                  +91 98797 14494 (WhatsApp) 
+                </a>
+                 <a href="https://wa.me/919879714494" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500 transition">
+                  +91 9879679233  
                 </a>
               </li>
               <li className="flex items-center space-x-3">

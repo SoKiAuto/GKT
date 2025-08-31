@@ -20,7 +20,8 @@ const Testimonial = () => {
           </p>
 
           <div>
-            <p className="font-semibold text-amber-500 text-lg">— Mr. Mulshankar, Director</p>
+            <p className="font-semibold text-amber-500 text-lg">— Mr. Mulshanker V. Vedant, Founder</p>
+            <p className="font-semibold text-amber-500 text-lg">— Mr. Rajesh M. Vedant, CEO</p>
             <p className="text-gray-500 text-sm mt-1">Founder & CEO, Gurukrupa Travels</p>
           </div>
         </div>

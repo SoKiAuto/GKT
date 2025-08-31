@@ -12,7 +12,7 @@ const Footer = () => {
           <p className="font-medium max-w-xl mx-auto md:mx-0 mb-2 text-gray-600 text-sm sm:text-base">
             Ward 10, Plot 95, Vidyanagar, Gurukul Area, Rambaug Rd, Gandhidham, Gujarat 370201
           </p>
-          <p className="font-medium text-gray-700 text-sm sm:text-base">📞 +91 98797 14494</p>
+          <p className="font-medium text-gray-700 text-sm sm:text-base">📞 +91 9879714494 , +91 9879679233</p>
           <p className="font-medium mb-4 text-gray-700 text-sm sm:text-base">🕒 Open 24 hours</p>
         </div>
 
@@ -20,10 +20,10 @@ const Footer = () => {
         <div className="flex-1">
           <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center md:justify-start gap-3 text-sm sm:text-base mb-4">
             <a
-              href="mailto:info@gurukrupatravels.com"
+              href="mailto:gurukrupatravels5555@gmail.com"
               className="text-gray-700 hover:text-gray-900 transition"
             >
-              📧 info@gurukrupatravels.com
+              📧 gurukrupatravels5555@gmail.com
             </a>
             <a
               href="https://wa.me/919879714494"
