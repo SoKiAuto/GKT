@@ -12,7 +12,7 @@ const toursData = [
   id: '1',
   title: '1 Night Package',
   category: 'Budget',
-  duration: '2 Night',
+  duration: '1 Night',
   destinations: 'Bhuj – Dhordo – White Rann – Bhuj',
   image: rannUtsav,
   days: [
