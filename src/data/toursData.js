@@ -1,9 +1,9 @@
 import classicKutch from '../assets/tours/classic-kutch.jpg';
-import rannUtsav from '../assets/tours/rann-utsav.jpg';
+import rannUtsav from '../assets/RunUtsav.jpeg';
 import spiritualTour from '../assets/tours/spiritual-tour.jpg';
 //import heritageCoast from '../assets/tours/heritage-coast.jpg';
-import sixDayTourImage from '../assets/tours/Road-to-Heaven.jpg'; // 
-import exploreKutchImage from '../assets/RunUtsav.jpeg'; // Or Temple.jpeg if you prefer
+import sixDayTourImage from '../assets/Temple.jpeg';
+import exploreKutchImage from'../assets/tours/Road-to-Heaven.jpg';  // Or Temple.jpeg if you prefer
 
 
 

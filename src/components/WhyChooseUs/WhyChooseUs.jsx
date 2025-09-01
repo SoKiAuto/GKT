@@ -83,7 +83,7 @@ const WhyChooseUs = () => {
                   review={reviewData.review}
                   rating={reviewData.rating}
                   time={reviewData.time}           // ✅ Added
-                 owner_reply={reviewData.owner_reply}// ✅ Added
+                
                 />
               ))}
             </div>
