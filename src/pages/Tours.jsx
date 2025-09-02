@@ -1,3 +1,4 @@
+// src/pages/Tours.jsx
 import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -48,43 +49,21 @@ const Tours = () => {
   };
 
   return (
-    <main className="min-h-screen w-screen px-3 sm:px-5 md:px-10 lg:px-20 py-10 sm:py-14 md:py-20 text-gray-900 bg-transparent">
+    <main className="min-h-screen w-screen px-3 sm:px-5 md:px-10 lg:px-20 py-10 sm:py-14 md:py-20 bg-bg text-text">
       <section className="max-w-[1400px] mx-auto">
         
         {/* Heading */}
-        <h1 className="py-8 sm:py-12 md:py-14 text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-center mb-10 sm:mb-16 md:mb-20 leading-tight 
-          bg-gradient-to-br from-amber-500 via-orange-400 to-yellow-300 
-          text-transparent bg-clip-text drop-shadow-lg">
-          Unforgettable 
-          <span
-            className="relative inline-block px-1 sm:px-2 py-0.5 sm:py-1 mx-1 sm:mx-2 font-bangers
-            bg-gradient-to-br from-gray-300 to-gray-400 bg-clip-text text-transparent 
-            drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] animate-glitch-text"
-            style={{
-              WebkitTextStroke: '1.5px black',
-              textStroke: '1.5px black',
-            }}
-          >
-            Adventure
-          </span>
-          Await in 
-          <span
-            className="relative inline-block px-1 sm:px-2 py-0.5 sm:py-1 mx-1 sm:mx-2 font-bangers
-            bg-gradient-to-br from-gray-300 to-gray-400 bg-clip-text text-transparent 
-            drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] animate-glitch-text"
-            style={{
-              WebkitTextStroke: '1.5px black',
-              textStroke: '1.5px black',
-            }}
-          >
-            Kutch
-          </span>
+        <h1 
+          className="py-8 sm:py-12 md:py-14 text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-center leading-tight
+          bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text drop-shadow-md"
+        >
+          Unforgettable Adventure Awaits in Kutch
         </h1>
 
         {/* Carousel */}
         {activeFilter === 'All Tours' && (
           <div className="mb-12 sm:mb-16 lg:mb-20 px-1 sm:px-2">
-            <h2 className="text-xl sm:text-3xl font-bold text-center sm:text-left text-gray-800 mb-6 sm:mb-8">
+            <h2 className="text-xl sm:text-3xl font-bold text-center sm:text-left text-primary mb-6 sm:mb-8">
               Featured Tours & Exclusive Packages
             </h2>
             <Slider {...sliderSettings} className="tour-slider">
@@ -104,8 +83,8 @@ const Tours = () => {
               key={filter}
               className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-semibold tracking-wide transition-all duration-300 ease-out transform focus:outline-none ${
                 activeFilter === filter
-                  ? 'bg-amber-500 text-white shadow-md scale-105'
-                  : 'bg-white border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white hover:shadow-lg hover:scale-105'
+                  ? 'bg-accent text-white shadow-md scale-105'
+                  : 'bg-white border-2 border-accent text-accent hover:bg-accent hover:text-white hover:shadow-lg hover:scale-105'
               }`}
               onClick={() => handleFilterClick(filter)}
               aria-pressed={activeFilter === filter}
@@ -124,7 +103,7 @@ const Tours = () => {
               </div>
             ))
           ) : (
-            <div className="col-span-full text-center text-base sm:text-xl text-gray-500 py-6 sm:py-10">
+            <div className="col-span-full text-center text-base sm:text-xl text-text-secondary py-6 sm:py-10">
               No tours found for this category.
             </div>
           )}

@@ -11,7 +11,7 @@ import forceCruiseImg from '../assets/vehicles/force-cruise.jpg';
 import tempoTravellerImg from '../assets/vehicles/tempo-traveller.jpg';
 
 import audiA6Img from '../assets/vehicles/audi-a6.jpg';
-import xl6Img from '../assets/vehicles/XL6.jpg';
+import xl6Img from '../assets/vehicles/XL6.jpg';  
 import miniBusImg from '../assets/vehicles/mini-bus.jpg';
 import luxuryBusImg from '../assets/vehicles/luxury-bus.jpg';
 import travellerInteriorImg from '../assets/vehicles/traveller-interior.jpg';
@@ -23,7 +23,7 @@ const vehiclesData = [
   { id: 2, type: 'Aura', capacity: '4 passengers', notes: 'Built for smooth, comfortable highway travel.', category: 'Cab Service', image: auraImg },
   { id: 3, type: 'Etios', capacity: '4 passengers', notes: 'Spacious sedan for comfortable highway travel', category: 'Cab Service', image: etiosImg },
   { id: 4, type: 'Ertiga', capacity: '6-7 passengers', notes: 'Ideal for small families and group tours', category: 'Cab Service', image: ertigaImg },
-  { id: 5, type: 'XL6', capacity: '6 passengers', notes: 'Stylish MPV with good mileage and comfort', category: 'Cab Service', image: xl6Img },
+  { id: 5, type: 'XL6', capacity: '5 passengers', notes: 'Stylish MPV with good mileage and comfort', category: 'Cab Service', image: xl6Img },
   { id: 6, type: 'Innova Crysta', capacity: '6-7 passengers', notes: 'Premium comfort for long trips and families', category: 'Cab Service', image: crystaImg },
   { id: 7, type: 'Tavera', capacity: '7-8 passengers', notes: 'Budget-friendly for groups and rural travel', category: 'Cab Service', image: taveraImg },
   { id: 8, type: 'Force Cruise', capacity: '9-12 passengers', notes: 'Perfect for rugged routes and large groups', category: 'Cab Service', image: forceCruiseImg },

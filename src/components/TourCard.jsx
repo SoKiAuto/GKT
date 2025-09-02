@@ -45,7 +45,7 @@ const TourCard = ({ tour, showDetailsToggle = true }) => {
 
   return (
     <>
-      <div className="bg-white/60 backdrop-blur-lg border border-amber-200 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+      <div className="bg-white/60 backdrop-blur-lg border border-border rounded-xl overflow-hidden shadow-shadow hover:shadow-2xl transition-all duration-300">
         {/* Image */}
         <div className="relative w-full h-48 sm:h-64 md:h-72 overflow-hidden">
           <img
@@ -56,15 +56,17 @@ const TourCard = ({ tour, showDetailsToggle = true }) => {
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-6 text-gray-800">
-          <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 tracking-tight text-amber-600">
+        <div className="p-4 sm:p-6 text-text-secondary">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 tracking-tight text-accent">
             {tour.title}
           </h3>
 
           {showDetailsToggle && (
             <button
               onClick={() => setShowDetails(!showDetails)}
-              className="mt-2 mr-3 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-amber-100 text-amber-700 hover:bg-amber-200 transition-all"
+              className="mt-2 mr-3 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold  bg-primary hover:bg-primary/90 text-white  sm:py-3 transition-all duration-300 hover:shadow-glow-primary"
+              // The classes here are from your original component. If you defined new shades, these will work.
+              // We'll apply a different glow to the "Book Now" button for a more prominent effect.
             >
               {showDetails ? "Hide Details" : "More Details"}
             </button>
@@ -73,7 +75,8 @@ const TourCard = ({ tour, showDetailsToggle = true }) => {
           {showDetails && (
             <button
               onClick={() => setShowBookingForm(true)}
-              className="mt-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-green-600 text-white hover:bg-green-700 transition-all"
+              className="mt-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-primary text-bg hover:bg-primary/90 transition-all duration-300 hover:shadow-glow-primary"
+              // Added transition-all and hover:shadow-glow-primary
             >
               Book Now
             </button>
@@ -88,14 +91,20 @@ const TourCard = ({ tour, showDetailsToggle = true }) => {
             <div className="space-y-4 sm:space-y-6">
               {tour.days.map((day, index) => (
                 <div key={index}>
-                  <h4 className="text-base sm:text-lg font-bold text-amber-600 mb-2">
+                  <h4 className="text-base sm:text-lg font-bold text-accent mb-2">
                     {day.day}
                   </h4>
-                  <ul className="border-l-2 border-amber-500 pl-3 sm:pl-4 space-y-1 sm:space-y-2">
+                  <ul className="border-l-2 border-accent pl-3 sm:pl-4 space-y-1 sm:space-y-2">
+                    {tour.destinations && (
+                      <li className="text-sm font-medium text-text-secondary">
+                        <span className="font-bold">Destinations:</span>{" "}
+                        {tour.destinations}
+                      </li>
+                    )}
                     {day.activities.map((activity, idx) => (
                       <li
                         key={idx}
-                        className="relative pl-4 before:absolute before:left-0 before:top-1 before:w-2 before:h-2 before:bg-amber-500 before:rounded-full text-xs sm:text-sm text-gray-700"
+                        className="relative pl-4 before:absolute before:left-0 before:top-1 before:w-2 before:h-2 before:bg-accent before:rounded-full text-xs sm:text-sm text-text"
                       >
                         {activity}
                       </li>
@@ -126,13 +135,13 @@ const TourCard = ({ tour, showDetailsToggle = true }) => {
                 : "translateX(100%)",
             }}
           >
-            <div className="p-4 sm:p-6 border-b border-gray-200 flex justify-between items-center">
-              <h3 className="text-lg sm:text-xl font-semibold text-amber-600">
+            <div className="p-4 sm:p-6 border-b border-border flex justify-between items-center">
+              <h3 className="text-lg sm:text-xl font-semibold text-accent">
                 Book This Tour
               </h3>
               <button
                 onClick={() => setShowBookingForm(false)}
-                className="text-gray-500 hover:text-gray-800 text-xl sm:text-2xl leading-none"
+                className="text-text-secondary hover:text-text text-xl sm:text-2xl leading-none"
               >
                 ×
               </button>
@@ -157,7 +166,7 @@ const TourCard = ({ tour, showDetailsToggle = true }) => {
                     value={form[field]}
                     onChange={handleChange}
                     required={field !== "email"}
-                    className="w-full px-3 sm:px-4 py-2 rounded-lg border border-amber-300 placeholder-gray-500 text-sm"
+                    className="w-full px-3 sm:px-4 py-2 rounded-lg border border-border placeholder-text-secondary text-sm"
                   />
                 </div>
               ))}
@@ -168,7 +177,7 @@ const TourCard = ({ tour, showDetailsToggle = true }) => {
                 value={form.date}
                 onChange={handleChange}
                 required
-                className="w-full px-3 sm:px-4 py-2 rounded-lg border border-amber-300 text-sm"
+                className="w-full px-3 sm:px-4 py-2 rounded-lg border border-border text-sm"
               />
 
               <input
@@ -179,12 +188,13 @@ const TourCard = ({ tour, showDetailsToggle = true }) => {
                 value={form.people}
                 onChange={handleChange}
                 required
-                className="w-full px-3 sm:px-4 py-2 rounded-lg border border-amber-300 text-sm"
+                className="w-full px-3 sm:px-4 py-2 rounded-lg border border-border text-sm"
               />
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-green-600 to-emerald-500 hover:from-green-700 hover:to-emerald-600 text-white font-bold py-2 sm:py-3 rounded-xl transition"
+                className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-2 sm:py-3 rounded-xl transition-all duration-300 hover:shadow-glow-primary"
+                // Simplified the gradient and added the glowing effect
               >
                 Send Booking via WhatsApp
               </button>

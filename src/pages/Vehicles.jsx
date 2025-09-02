@@ -60,25 +60,11 @@ const Vehicles = () => {
     <main className="min-h-screen w-full px-3 sm:px-6 md:px-10 lg:px-20 py-12 md:py-20 text-gray-900 bg-transparent">
       <section className="max-w-[1400px] mx-auto">
         {/* Page Heading */}
-        <h1
-          className="py-10 sm:py-14 text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-center mb-12 md:mb-20 leading-tight
-            bg-gradient-to-br from-amber-500 via-orange-400 to-yellow-300 
-            text-transparent bg-clip-text drop-shadow-lg"
-        >
-          Comfortable
-          <span
-            className="relative inline-block px-2 py-1 mx-1 sm:mx-2 font-bangers
-              bg-gradient-to-br from-gray-300 to-gray-400 bg-clip-text text-transparent 
-              drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] animate-glitch-text"
-            style={{
-              WebkitTextStroke: '1.5px black',
-              textStroke: '1.5px black',
-            }}
-          >
-            Vehicle Rentals
-          </span>
-          for Every Journey
-        </h1>
+        <h1 
+  className="py-8 sm:py-12 md:py-14 text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-center leading-tight
+  bg-gradient-to-r from-amber-500 to-orange-500 text-transparent bg-clip-text drop-shadow-md">
+  Comfortable  Vehicle Rentals for Every Journey
+</h1>
 
         {/* Featured Vehicles Carousel */}
         {activeFilter === 'All Vehicles' && (

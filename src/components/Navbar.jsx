@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
+// import logo
+import namedLogo from "../assets/logos/named-logo.png";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -39,13 +42,14 @@ const Navbar = () => {
         }`}
     >
       {/* Navbar container */}
-      <div className="flex justify-between items-center h-12">
+      <div className="flex justify-between items-center h-14">
         {/* Brand Logo */}
-        <Link
-          to="/"
-          className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white tracking-wider transition-colors duration-300 hover:text-gray-700 dark:hover:text-gray-300 whitespace-nowrap"
-        >
-          Gurukrupa.Travels
+        <Link to="/" className="flex items-center">
+          <img
+            src={namedLogo}
+            alt="Gurukrupa Travels Logo"
+            className="h-20 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Menu */}
