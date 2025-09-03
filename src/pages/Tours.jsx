@@ -1,4 +1,3 @@
-// src/pages/Tours.jsx
 import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -49,13 +48,15 @@ const Tours = () => {
   };
 
   return (
-    <main className="min-h-screen w-screen px-3 sm:px-5 md:px-10 lg:px-20 py-10 sm:py-14 md:py-20 bg-bg text-text">
-      <section className="max-w-[1400px] mx-auto">
+    <main className="min-h-screen w-screen px-3 sm:px-5 md:px-10 lg:px-20 py-10 sm:py-14 md:py-20 relative">
+      {/* Overlay to ensure text visibility on background image */}
+      <div className="absolute inset-0 bg-light bg-opacity-90 z-0"></div>
+
+      <section className="relative z-10 max-w-[1400px] mx-auto">
         
         {/* Heading */}
-        <h1 
-          className="py-8 sm:py-12 md:py-14 text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-center leading-tight
-          bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text drop-shadow-md"
+        <h1
+          className="py-8 sm:py-12 md:py-14 text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-center leading-tight text-accent"
         >
           Unforgettable Adventure Awaits in Kutch
         </h1>
@@ -63,7 +64,7 @@ const Tours = () => {
         {/* Carousel */}
         {activeFilter === 'All Tours' && (
           <div className="mb-12 sm:mb-16 lg:mb-20 px-1 sm:px-2">
-            <h2 className="text-xl sm:text-3xl font-bold text-center sm:text-left text-primary mb-6 sm:mb-8">
+            <h2 className="text-xl sm:text-3xl font-bold text-center sm:text-left mb-6 sm:mb-8 text-primary">
               Featured Tours & Exclusive Packages
             </h2>
             <Slider {...sliderSettings} className="tour-slider">
@@ -81,13 +82,15 @@ const Tours = () => {
           {['All Tours', 'Adventure', 'Family', 'Budget', 'Heritage'].map((filter) => (
             <button
               key={filter}
-              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-semibold tracking-wide transition-all duration-300 ease-out transform focus:outline-none ${
-                activeFilter === filter
-                  ? 'bg-accent text-white shadow-md scale-105'
-                  : 'bg-white border-2 border-accent text-accent hover:bg-accent hover:text-white hover:shadow-lg hover:scale-105'
-              }`}
               onClick={() => handleFilterClick(filter)}
               aria-pressed={activeFilter === filter}
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-semibold tracking-wide transition-all duration-300 ease-out transform focus:outline-none border-2
+                ${
+                  activeFilter === filter
+                    ? 'bg-accent text-light shadow-md scale-105'
+                    : 'bg-light border-accent text-accent hover:bg-accent hover:text-light hover:shadow-lg hover:scale-105'
+                }
+              `}
             >
               {filter}
             </button>
@@ -103,7 +106,7 @@ const Tours = () => {
               </div>
             ))
           ) : (
-            <div className="col-span-full text-center text-base sm:text-xl text-text-secondary py-6 sm:py-10">
+            <div className="col-span-full text-center text-base sm:text-xl py-6 sm:py-10 text-primary">
               No tours found for this category.
             </div>
           )}

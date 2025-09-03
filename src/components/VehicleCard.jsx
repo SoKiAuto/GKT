@@ -28,115 +28,97 @@ const VehicleCard = ({ vehicle, showDetailsToggle = true }) => {
       `🗓️ Travel Start Date: ${form.date}`,
       `🚘 Requested Vehicle Type: ${form.vehicleType}`,
       `\nPlease send me pricing and booking confirmation. Thanks!`
-    ]
-      .filter(Boolean)
-      .join('\n');
+    ].filter(Boolean).join('\n');
 
     const phoneNumber = '+918200441509';
     const encodedMessage = encodeURIComponent(message);
     const waLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
     window.open(waLink, '_blank');
+    setShowBookingForm(false);
   };
 
   return (
-    <div className="bg-white/60 backdrop-blur-lg border border-amber-200 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 w-full max-w-lg mx-auto">
-      {/* Image */}
-      <div className="relative w-full h-56 sm:h-64 overflow-hidden">
-        <img
-          src={images[0] || 'https://placehold.co/600x400?text=No+Image'}
-          alt={vehicle.type}
-          className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src =
-              'https://placehold.co/600x400?text=Image+Not+Found';
-          }}
-        />
-      </div>
+    <>
+      <div className="bg-light/70 backdrop-blur-lg border border-accent/20 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+        {/* Image */}
+        <div className="relative w-full h-48 sm:h-64 md:h-72 overflow-hidden">
+          <img
+            src={images[0] || 'https://placehold.co/600x400?text=No+Image'}
+            alt={vehicle.type}
+            className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = 'https://placehold.co/600x400?text=Image+Not+Found';
+            }}
+          />
+        </div>
 
-      {/* Text Content */}
-      <div className="p-4 sm:p-6 text-gray-800">
-        <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 tracking-tight text-amber-600">
-          {vehicle.type}
-        </h3>
+        {/* Content */}
+        <div className="p-4 sm:p-6 text-primary">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 tracking-tight text-accent">
+            {vehicle.type}
+          </h3>
 
-        {vehicle.category && (
-          <p className="text-xs sm:text-sm font-semibold text-amber-500 mb-1 sm:mb-2">
-            {vehicle.category}
-          </p>
-        )}
+          {vehicle.category && (
+            <p className="text-xs sm:text-sm font-semibold text-accent mb-2">
+              Category: {vehicle.category}
+            </p>
+          )}
 
-        {vehicle.capacity && (
-          <p className="text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
-            <span className="font-semibold text-amber-600">Capacity:</span>{' '}
-            {vehicle.capacity}
-          </p>
-        )}
+          {vehicle.capacity && (
+            <p className="text-xs sm:text-sm font-medium text-primary/80 mb-2">
+              Capacity: {vehicle.capacity}
+            </p>
+          )}
 
-        {images.length > 1 && (
-          <p className="text-[10px] sm:text-xs italic text-gray-500">
-            + {images.length - 1} interior image
-            {images.length > 2 ? 's' : ''}
-          </p>
-        )}
+          {(vehicle.privateRate || vehicle.driverRate) && (
+            <div className="space-y-1 mb-2 text-sm text-primary/80">
+              {vehicle.privateRate && (
+                <p>
+                  <span className="font-semibold text-accent">Self-Drive:</span> {vehicle.privateRate}
+                </p>
+              )}
+              {vehicle.driverRate && (
+                <p>
+                  <span className="font-semibold text-accent">With Driver:</span> {vehicle.driverRate}
+                </p>
+              )}
+            </div>
+          )}
 
-        {/* Buttons */}
-        <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row gap-2 sm:gap-3">
           {showDetailsToggle && (
             <button
               onClick={() => setShowDetails(!showDetails)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all text-center ${
-                showDetails
-                  ? 'bg-amber-600 text-white hover:bg-amber-700'
-                  : 'bg-amber-200 text-amber-700 hover:bg-amber-300'
-              }`}
+              className="mt-2 mr-3 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-primary/10 text-primary hover:bg-primary/20 transition-all"
             >
-              {showDetails ? 'Hide Details' : 'View Details'}
+              {showDetails ? 'Hide Details' : 'More Details'}
             </button>
           )}
 
           {showDetails && (
             <button
               onClick={() => setShowBookingForm(true)}
-              className="px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-green-600 text-white hover:bg-green-700 transition-all text-center"
+              className="mt-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-green-600 text-white hover:bg-green-700 transition-all"
             >
               Book Now
             </button>
           )}
-        </div>
 
-        {/* Details Section */}
-        <div
-          className={`transition-all duration-500 ease-in-out overflow-hidden ${
-            showDetails ? 'max-h-[1000px] mt-4' : 'max-h-0'
-          }`}
-        >
-          <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-gray-700">
-            {vehicle.privateRate && (
-              <p>
-                <span className="font-semibold text-amber-600">
-                  Self-Drive:
-                </span>{' '}
-                {vehicle.privateRate}
-              </p>
-            )}
-            {vehicle.driverRate && (
-              <p>
-                <span className="font-semibold text-amber-600">
-                  With Driver:
-                </span>{' '}
-                {vehicle.driverRate}
-              </p>
-            )}
+          {/* Details Section */}
+          <div
+            className={`transition-all duration-500 ease-in-out overflow-hidden ${
+              showDetails ? 'max-h-[1000px] mt-4 sm:mt-6' : 'max-h-0'
+            }`}
+          >
             {vehicle.notes && (
-              <p className="italic text-gray-600">{vehicle.notes}</p>
+              <p className="italic text-primary/70">{vehicle.notes}</p>
             )}
           </div>
         </div>
       </div>
 
-      {/* Slide-in Booking Panel */}
+      {/* Booking Form Panel */}
       {showBookingForm && (
         <div className="fixed inset-0 z-50 flex">
           {/* Backdrop */}
@@ -145,22 +127,20 @@ const VehicleCard = ({ vehicle, showDetailsToggle = true }) => {
             className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300"
           />
 
-          {/* Slide-in Panel */}
+          {/* Panel */}
           <div
-            className="relative ml-auto w-full max-w-md bg-white shadow-2xl h-full overflow-y-auto transform transition-transform duration-500 ease-in-out"
+            className="relative ml-auto w-full sm:w-[90%] md:max-w-md bg-white shadow-2xl h-full overflow-y-auto transform transition-transform duration-500 ease-in-out"
             style={{
-              transform: showBookingForm
-                ? 'translateX(0)'
-                : 'translateX(100%)'
+              transform: showBookingForm ? 'translateX(0)' : 'translateX(100%)',
             }}
           >
-            <div className="p-4 sm:p-6 border-b border-gray-200 flex justify-between items-center">
-              <h3 className="text-lg sm:text-xl font-semibold text-amber-600">
+            <div className="p-4 sm:p-6 border-b border-accent/20 flex justify-between items-center">
+              <h3 className="text-lg sm:text-xl font-semibold text-accent">
                 Book This Vehicle
               </h3>
               <button
                 onClick={() => setShowBookingForm(false)}
-                className="text-gray-500 hover:text-gray-800 text-2xl leading-none"
+                className="text-gray-500 hover:text-gray-800 text-xl sm:text-2xl leading-none"
               >
                 ×
               </button>
@@ -179,15 +159,13 @@ const VehicleCard = ({ vehicle, showDetailsToggle = true }) => {
                       field === 'phone'
                         ? 'Phone Number *'
                         : `${field.charAt(0).toUpperCase() + field.slice(1)} ${
-                            field !== 'email'
-                              ? '*'
-                              : '(optional)'
+                            field !== 'email' ? '*' : '(optional)'
                           }`
                     }
                     value={form[field]}
                     onChange={handleChange}
                     required={field !== 'email'}
-                    className="w-full px-3 sm:px-4 py-2 rounded-lg border border-amber-300 placeholder-gray-500 text-sm"
+                    className="w-full px-3 sm:px-4 py-2 rounded-lg border border-accent/30 placeholder-gray-500 text-sm"
                   />
                 </div>
               ))}
@@ -198,7 +176,7 @@ const VehicleCard = ({ vehicle, showDetailsToggle = true }) => {
                 value={form.date}
                 onChange={handleChange}
                 required
-                className="w-full px-3 sm:px-4 py-2 rounded-lg border border-amber-300 text-sm"
+                className="w-full px-3 sm:px-4 py-2 rounded-lg border border-accent/30 text-sm"
               />
 
               <input
@@ -208,12 +186,12 @@ const VehicleCard = ({ vehicle, showDetailsToggle = true }) => {
                 value={form.vehicleType}
                 onChange={handleChange}
                 required
-                className="w-full px-3 sm:px-4 py-2 rounded-lg border border-amber-300 text-sm"
+                className="w-full px-3 sm:px-4 py-2 rounded-lg border border-accent/30 text-sm"
               />
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-green-600 to-emerald-500 hover:from-green-700 hover:to-emerald-600 text-white font-bold py-3 rounded-xl transition text-sm sm:text-base"
+                className="w-full bg-gradient-to-r from-green-600 to-emerald-500 hover:from-green-700 hover:to-emerald-600 text-white font-bold py-2 sm:py-3 rounded-xl transition"
               >
                 Send Booking via WhatsApp
               </button>
@@ -221,7 +199,7 @@ const VehicleCard = ({ vehicle, showDetailsToggle = true }) => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

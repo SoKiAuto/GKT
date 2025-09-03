@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -19,14 +18,12 @@ const Navbar = () => {
     { name: 'Contact', path: '/contact' },
   ];
 
-  // Scroll effect for navbar background
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when navigating
   useEffect(() => {
     setIsOpen(false);
   }, [currentPath]);
@@ -37,11 +34,10 @@ const Navbar = () => {
         transition-all duration-300 ease-in-out border backdrop-blur-md shadow-md
         ${
           scrolled
-            ? 'bg-white/85 dark:bg-neutral-900/80 border-gray-200 dark:border-neutral-700 shadow-lg'
-            : 'bg-white/60 dark:bg-neutral-800/70 border-gray-200 dark:border-neutral-700/80'
+            ? 'bg-white/85 border-gray-200 shadow-lg'
+            : 'bg-white/60 border-gray-200'
         }`}
     >
-      {/* Navbar container */}
       <div className="flex justify-between items-center h-14">
         {/* Brand Logo */}
         <Link to="/" className="flex items-center">
@@ -52,7 +48,7 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* Desktop Menu */}
+        {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-6 lg:space-x-8 font-semibold">
           {navLinks.map(({ name, path }) => {
             const isActive = currentPath === path;
@@ -60,16 +56,16 @@ const Navbar = () => {
               <li key={name}>
                 <Link
                   to={path}
-                  className={`relative px-2 py-1 transition-all duration-300 text-base lg:text-lg group
+                  className={`relative px-2 py-1 text-base lg:text-lg transition-colors duration-300 group
                     ${
                       isActive
-                        ? 'text-gray-900 dark:text-white'
-                        : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
+                        ? 'text-[#09328E]'
+                        : 'text-gray-600 hover:text-[#09328E]'
                     }`}
                 >
                   {name}
                   <span
-                    className={`absolute bottom-0 left-0 w-full h-[2px] bg-current rounded-full
+                    className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#EA9236] rounded-full
                       transition-transform duration-300
                       ${isActive ? 'scale-x-100' : 'scale-x-0'}
                       group-hover:scale-x-100 origin-left`}
@@ -80,38 +76,41 @@ const Navbar = () => {
           })}
         </ul>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400"
+          className="md:hidden p-2 rounded-md text-[#09328E] hover:text-[#EA9236] transition-colors"
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isOpen}
         >
           {isOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 sm:h-9 sm:w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 sm:h-9 sm:w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           )}
         </button>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out
-          ${isOpen ? 'max-h-96 mt-3 opacity-100' : 'max-h-0 opacity-0'}
-        `}
+          ${isOpen ? 'max-h-96 mt-3 opacity-100' : 'max-h-0 opacity-0'}`}
       >
-        <ul className="flex flex-col space-y-4 p-4 rounded-lg bg-white/95 dark:bg-neutral-900/95 border border-gray-200 dark:border-neutral-700 shadow-md text-lg font-semibold text-gray-700 dark:text-gray-200">
+        <ul className="flex flex-col space-y-4 p-4 rounded-lg bg-white/90 border border-gray-200 shadow-md text-lg font-semibold text-[#09328E]">
           {navLinks.map(({ name, path }) => (
             <li key={name}>
               <Link
                 to={path}
-                className={`block px-2 py-1 transition-colors duration-300 rounded
-                  ${currentPath === path ? 'font-bold text-black dark:text-white bg-gray-100 dark:bg-neutral-800' : 'hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-neutral-800'}`}
+                className={`block px-3 py-2 rounded transition-colors
+                  ${
+                    currentPath === path
+                      ? 'font-bold bg-[#EA9236]/10 text-[#09328E]'
+                      : 'hover:bg-[#EA9236]/10 hover:text-[#09328E]'
+                  }`}
               >
                 {name}
               </Link>

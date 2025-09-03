@@ -17,19 +17,11 @@ export default {
 
       // Custom Kandira Brand Palette
       colors: {
-        bg: 'var(--color-bg)',
-        primary: 'var(--color-primary)',
-        accent: 'var(--color-accent)',
-        text: 'var(--color-text)',
-        'text-secondary': 'var(--color-text-secondary)',
-        border: 'var(--color-border)',
-        navbar: 'var(--color-navbar-bg)',
-
-        // Kandira fixed palette (can be used directly)
-        'marian-blue': '#1D4295',
-        'egyptian-blue': '#09328E',
-        'carrot-orange': '#EA9236',
-        'white-2': '#FFFEFF',
+        primary: "#09328E",
+        accent: "#EA9236",
+        light: "#FFFEFF",
+        
+       
       },
 
     

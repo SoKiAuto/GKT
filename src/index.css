@@ -7,30 +7,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Kandira Theme Variables */
+
 :root {
-  --color-bg: #FFFEFF;          /* white-2 */
-  --color-primary: #1D4295;     /* marian-blue */
-  --color-accent: #EA9236;      /* carrot-orange */
-  --color-text: #09328E;        /* egyptian-blue */
-  --color-text-secondary: #1D4295cc; /* marian-blue with opacity */
-  --color-border: #d1d5db;      /* neutral border */
-  --color-navbar-bg: #1D4295;   /* marian-blue */
-  --color-shadow: rgba(0, 0, 0, 0.15);
+  --color-primary: #09328E;
+  --color-accent: #EA9236;
+  --color-light: #FFFEFF;
 }
-
-/* Optional: Dark mode variant */
-.dark {
-  --color-bg: #0f172a;          /* slate-900 */
-  --color-primary: #EA9236;     /* carrot-orange */
-  --color-accent: #1D4295;      /* marian-blue */
-  --color-text: #FFFEFF;        /* white */
-  --color-text-secondary: #e2e8f0; /* slate-200 */
-  --color-border: #334155;      /* slate-700 */
-  --color-navbar-bg: #09328E;   /* egyptian-blue */
-  --color-shadow: rgba(255, 255, 255, 0.15);
-}
-
 
 
 /* Global reset for box-sizing to ensure padding and borders are included within an element's total width/height */
@@ -149,49 +131,3 @@ body {
 }
 
 
-
-/* CSS HEX */
---white: #FFFFFFff;
---marian-blue: #1D4295ff;
---egyptian-blue: #09328Eff;
---carrot-orange: #EA9236ff;
---white-2: #FFFEFFff;
-
-/* CSS HSL */
---white: hsla(0, 0%, 100%, 1);
---marian-blue: hsla(221, 67%, 35%, 1);
---egyptian-blue: hsla(222, 88%, 30%, 1);
---carrot-orange: hsla(31, 81%, 56%, 1);
---white-2: hsla(300, 100%, 100%, 1);
-
-/* SCSS HEX */
-$white: #FFFFFFff;
-$marian-blue: #1D4295ff;
-$egyptian-blue: #09328Eff;
-$carrot-orange: #EA9236ff;
-$white-2: #FFFEFFff;
-
-/* SCSS HSL */
-$white: hsla(0, 0%, 100%, 1);
-$marian-blue: hsla(221, 67%, 35%, 1);
-$egyptian-blue: hsla(222, 88%, 30%, 1);
-$carrot-orange: hsla(31, 81%, 56%, 1);
-$white-2: hsla(300, 100%, 100%, 1);
-
-/* SCSS RGB */
-$white: rgba(255, 255, 255, 1);
-$marian-blue: rgba(29, 66, 149, 1);
-$egyptian-blue: rgba(9, 50, 142, 1);
-$carrot-orange: rgba(234, 146, 54, 1);
-$white-2: rgba(255, 254, 255, 1);
-
-/* SCSS Gradient */
-$gradient-top: linear-gradient(0deg, #FFFFFFff, #1D4295ff, #09328Eff, #EA9236ff, #FFFEFFff);
-$gradient-right: linear-gradient(90deg, #FFFFFFff, #1D4295ff, #09328Eff, #EA9236ff, #FFFEFFff);
-$gradient-bottom: linear-gradient(180deg, #FFFFFFff, #1D4295ff, #09328Eff, #EA9236ff, #FFFEFFff);
-$gradient-left: linear-gradient(270deg, #FFFFFFff, #1D4295ff, #09328Eff, #EA9236ff, #FFFEFFff);
-$gradient-top-right: linear-gradient(45deg, #FFFFFFff, #1D4295ff, #09328Eff, #EA9236ff, #FFFEFFff);
-$gradient-bottom-right: linear-gradient(135deg, #FFFFFFff, #1D4295ff, #09328Eff, #EA9236ff, #FFFEFFff);
-$gradient-top-left: linear-gradient(225deg, #FFFFFFff, #1D4295ff, #09328Eff, #EA9236ff, #FFFEFFff);
-$gradient-bottom-left: linear-gradient(315deg, #FFFFFFff, #1D4295ff, #09328Eff, #EA9236ff, #FFFEFFff);
-$gradient-radial: radial-gradient(#FFFFFFff, #1D4295ff, #09328Eff, #EA9236ff, #FFFEFFff);

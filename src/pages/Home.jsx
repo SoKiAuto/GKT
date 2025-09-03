@@ -29,12 +29,12 @@ const Home = () => {
         bg-[url('/src/assets/Background.png')]
         bg-repeat bg-fixed
         bg-[length:300px_300px] sm:bg-[length:400px_400px]
-        px-2 sm:px-4 md:px-6
+        px-2 sm:px-4 md:px-2 
       "
     >
       {/* Hero Section with scrolling images */}
       {images.length > 0 && (
-        <section className="mb-8 sm:mb-12 md:mb-16">
+        <section className="mb-8 sm:mb-12 md:mb-16  ">
           <HeroCarousel images={images} />
         </section>
       )}
